@@ -1,8 +1,7 @@
 ---
 title: "Blog of the Record Linkage Interest Group"
 description: |
-  Welcome to the blog of the Record Linkage Interest Group. We hope you enjoy 
-  reading what we have to say!
+  Welcome to the blog of the Record Linkage Interest Group.
 author:
   - name: Olivier Binette
     url: https://olivierbinette.github.io

@@ -1,13 +1,13 @@
 name: "."
-title: "Blog of the Record Linkage Interest Group"
+title: "RLIG"
 description: |
   Blog of the Record Linkage Interest Group
 output_dir: "docs"
 theme: custom.css
 navbar:
   right:
-    - text: "Home"
+    - text: "Blog"
       href: index.html
-    - text: "About"
-      href: about.html
+    - text: "Main Website"
+      href: https://sites.google.com/view/rlig
 output: distill::distill_article
