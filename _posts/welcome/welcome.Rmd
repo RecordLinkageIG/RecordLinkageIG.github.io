@@ -1,5 +1,5 @@
 ---
-title: "Blog of the Record Linkage Interest Group"
+title: "Welcome!"
 description: |
   Welcome to the blog of the Record Linkage Interest Group.
 author:
