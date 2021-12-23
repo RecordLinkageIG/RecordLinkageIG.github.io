@@ -2,7 +2,7 @@ name: "."
 title: "Blog of the Record Linkage Interest Group"
 description: |
   Blog of the Record Linkage Interest Group
-output_dir: "_site"
+output_dir: "docs"
 theme: custom.css
 navbar:
   right:
