@@ -1,0 +1,466 @@
+---
+title: "Record Linkage at the GPSG Community Pantry"
+description: |
+  Description of the record linkage system used at the GPSG Community Pantry
+preview: http://dukegpsc.org/wp-content/uploads/2019/07/pantry.jpg
+author:
+  - name: Olivier Binette
+    url: https://olivierbinette.github.io
+    affiliation: Duke university
+date: 2021-12-23
+categories: 
+  - Python
+  - Record Linkage
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+    toc_depth: 2
+draft: true
+repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
+citation_url: https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Note: this post is under construction.
+
+# Introduction
+
+Duke's Graduate and Professional Student Government (GPSG) has been operating a community food pantry for about five years. The pantry provides non-perishable food and basic need items to graduate and professional students on campus. There is a weekly bag program, where students order customized bags of food to be picked up on Saturdays, as well as an in-person shopping program open on Thursdays and Saturdays.
+
+![](pantry.jpg)
+
+
+The weekly bag program, which began in March 2020 and is still the most popular pantry offering, provides quite a bit of data regarding pantry customers and their habits. Some customers have ordered more than 80 times in the past 2 years, while others only ordered once or twice. For every order, we have the customer's first name and last initial, an email address, a phone number in a few cases, an address in some cases (for delivery), we have demographic information some cases, and we have the food order information. Available quasi-identifying information is shown in Table 1 below.
+
+
+| Question no.                                          | Question                         | Answer form               | Mandatory? |
+|-------------------------------------------------------|----------------------------------|---------------------------| --- |
+| - | IP address | - | Yes | 
+| 2                                                     | First name and last initial      | Free form                 | Yes |
+| 3                                                     | Duke email                       | Free form                 | Yes |
+| 4                                                     | Phone number                     | Free form                 | No |
+| 6                                                     | Address                          | Free form                 | No |
+| 8                                                     | Food allergies                   | Free form                 | No |
+| 9                                                     | Number of members in household   | 1-2 or 3+                 | Yes |
+| 10                                                    | Want baby bag?                   | Yes or no                 | Yes |
+| 30                                                    | Degree                           | Multiple choices or Other | No |
+| 31                                                    | School                           | Multiple choices or Other | No |
+| 32                                                    | Year in graduate school          | Multiple choices          | No |
+| 33                                                    | Number of adults in household    | Multiple choices          | No |
+| 34                                                    | Number of children in household  | Multiple choices          | No |
+Table: Table 1: Quasi-identifying information provided on Qualtrics bag order order forms. Note that phone number and address were only required while delivery was offered. Furthermore, most customers stop answering demographic questions after a few orders.
+
+
+Gaining the most insight from this data requires linking order records made by the same customer. Identifying individual customers and associating them with an order history allows us to investigate shopping recurrence patterns and identify potential issues with the pantry's offering. For instance, we can know who stopped ordering from the pantry after the home delivery program ended. These are people who, most likely, do not have a car to get to the pantry but might benefit from new programs, such as a rideshare program or a gift card program.
+
+This blog post describes the way in which records are linked at the Community Pantry. As we will see, the record linkage problem is not particularly difficult. It is not trivial either, however, and it does require care to ensure that it runs reliably and efficiently, and that it is intelligible and properly validated. This post goes in detail into these two aspects of the problem.
+
+Regarding efficiency and reliability of the software system, I describe the development of a Python module, called [**GroupByRule**](https://github.com/olivierbinette/groupbyrule), for record linkage at the pantry. This Python module is maintainable, documented and tested, ensuring reliability of the system and the potential for its continued use throughout the years, even as technical volunteers change at the pantry. Regarding validation of the record linkage system, I describe simple steps that can be taken to evaluate model performance. This model evaluation procedure uses probabilistic record linkage and clerical review to validate to validate the simpler deterministic approach.
+
+Before jumping into the technical part, let's take a step back to discuss the issue of food insecurity on campus.
+
+## Food Insecurity on Campus
+
+It is often surprising to people that some Duke students might struggle having access to food. After all, Duke is one of the richest campus in the US with its [12 billion endowment](https://www.dukechronicle.com/article/2021/10/duke-university-endowment-gain-56-percent-dumac-how-used-financial-aid-faculty-pay-who-manages). Prior to the covid-19 pandemic, this wealth could be seen on campus and benefit many. Every weekday, there were several conferences and events with free food. Me and many other graduate students would participate in these events, earning 3-4 free lunches every week. Free food on campus is now a thing of the past, for the most part.
+
+However, free lunch or not, it's important to realize the many financial challenges which students can face. International students on F-1 and J-1 visas have limited employment opportunities in the US. Many graduate students are married, have children or have other dependents which may not be eligible to work in the US either. Even if they are lucky enough to be paid a 9 or 12 months stipend, this stipend doesn't go very far. For other students, going to Duke means living on a mixture of loans, financial aid, financial support from parents, and side jobs. Any imbalance in this rigid system can leave students having to compromise between their education and their health.
+
+A 2019 study from the World Food Policy Center reported that about 19% of graduate and professional students at Duke experienced food insecurity in the past year. This means they were unable to afford a balanced and sufficient diet, they were afraid of not having enough money for food, or they skipped meals and went hungry due to lack of money. The GPSG Community Pantry has recently been leading efforts to expand food insecurity monitoring on campus -- we are hoping to have more data in 2022 and in following years.
+
+# The Record Linkage Approach
+
+The bag order forms contains email addresses which are highly reliable for linkage. If two records have the same email, we know for certain that they are from the same customer. However, customers do not always enter the same email address when submitting orders. Despite the resquest to use a Duke email address, some customers use personal emails. Furthermore, Duke email addresses have two forms. For instance, my duke email is both `ob37@duke.edu` and `olivier.binette@duke.edu`. Emails are therefore not sufficient for linkage. Phone numbers can be used as well, but these are only available for the period when home delivery was available. 
+
+First name and last initial can be used to supplement emails and phone numbers. Again, agreement on first name and last initial provides strong evidence for match. On the other hand, people do not always enter their names in the same way.
+
+Combining the use of emails, phone numbers, and names, we may therefore link records which agree on any one of these attributes. This is a simple deterministic record linkage approach which should be reliable enough for the data analysis use of the pantry.
+
+## Deterministic Record Linkage Rule
+
+To be more precise, record linkage proceeds as follows:
+
+1. Records are processed to clean and standardize the email, phone and name attributes. That is, leading and trailing whitespace are removed, capitalization is standardized, phone numbers are validated and standardized, and punctuation is removed from names.
+
+2. Records which agree on any of their email, phone or name attributes are linked together.
+
+3. Connected components of the resulting graph are computed in order to obtain record clusters.
+
+
+This record linkage procedure is extremely simple. It relies the fact that all three attributes are reliable indicators of a match and that, for two matching records, it is likely that at least one of these three attributes will be in agreement. 
+
+Also, the simplicity of the approach allows the use of available additional information (such as IP address and additional questions) for model validation. If the use of this additional information does not highlight any flaws with the simple deterministic approach, then this means that the deterministic approach is already good enough. We will come back to this when discussing model validation techniques.
+
+## Implementation
+
+Our deterministic record linkage system is implemented in Python with some generality. The goal is for the system to be able to adapt to changes in data or processes.
+
+The fundamental component of the system is a `GroupingRule` class. GroupingRule objects can be fitted to data, providing either a clustering or a linkage graph. For instance, a GroupingRule might be a rule to link all records which agree on the email attribute. Another GroupingRule might summarize a set of other rules, such as taking the union or intersection of their links.
+
+The interface is as follows:
+
+```{python, eval=FALSE}
+from abc import ABC, abstractmethod
+
+
+class LinkageRule(ABC):
+    """
+    Interface for a linkage rule which can be fitted to data.
+
+    This abstract class specifies three methods. The `fit()` method fits the 
+    linkage rule to a pandas DataFrame. The `graph` property can be used after 
+    `fit()` to obtain a graph representing the linkage fitted to data.  The 
+    `groups` property can be used after `fit()` to obtain a membership vector 
+    representing the clustering fitted to data.
+    """
+    @abstractmethod
+    def fit(self, df):
+        pass
+
+    @property
+    @abstractmethod
+    def graph(self):
+        pass
+
+    @property
+    @abstractmethod
+    def groups(self):
+        pass
+```
+
+Note that `GroupsType`, our representation for cluster groups, is meant to be a numpy integer array with entries indicating what group (cluster) a given record belongs to. Such a "groups" vector should not contain NA values; rather it should contain distinct integers for records that are not in the same cluster.
+
+We will now define two other classes, `Match` and `Any`, which allow us to implement deterministic record linkage. The `Match` class implements an exact matching rule, while `Any` is the logical disjunction of a given set of rules. Our deterministic record linkage rule for the pantry will therefore be defined as follows:
+
+```{python, eval=FALSE}
+rule = Any(Match("name"), Match("email"), Match("phone"))
+```
+
+Following the `GroupingRule` interface, this rule will then be fitted to the data and used as follows:
+
+```{python, eval=FALSE}
+rule.fit(data)
+data.groupby(rule.groups).last() # Get last visit data for all customers.
+```
+
+The benefit of this general interface is that it is extendable. By default, the `Any` class will return connected components when requesting group clusters. However, other clustering approaches could be used. Exact matching rules could also be relaxed to fuzzy matching rules based on string distance metrics or probabilistic record linkage. All of this can be implemented as additional `GroupingRule` subclasses in a way which is compatible with the above.
+
+Let's now work on the `Match` class. For efficiency, we'll want `Match` to operate at the groups level. That is, if `Match` is called on a set of rules, then we'll first compute groups for these rules, before computing the intersection of these groups. This core functionality is implemented in the function `groups_from_rules()` below. The function `groups()` is a simple wrapper to interpret strings as a matching rule on the corresponding column.
+
+```{python, eval=FALSE}
+import pandas as pd
+import numpy as np
+import itertools
+from igraph import Graph
+
+def _groups(rule, df):
+    """
+    Fit linkage rule to dataframe and return membership vector.
+
+    Parameters
+    ----------
+    rule: string or LinkageRule
+        Linkage rule to be fitted to the data. If `rule` is a string, then this 
+        is interpreted as an exact matching rule for the corresponding column.
+    df: DataFrame
+        pandas Dataframe to which the rule is fitted.
+
+    Returns
+    -------
+    Membership vector (i.e. integer vector) u such that u[i] indicates the 
+    cluster to which dataframe row i belongs. 
+
+    Notes
+    -----
+    NA values are considered to be non-matching.
+
+    Examples
+    --------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame({"fname":["Olivier", "Jean-Francois", "Alex"], 
+      "lname":["Binette", "Binette", pd.NA]})
+
+    Groups specified by distinct first names:
+    >>> _groups("fname", df)
+    array([2, 1, 0], dtype=int8)
+
+    Groups specified by same last names:
+    >>> _groups("lname", df)
+    array([0, 0, 3], dtype=int8)
+
+    Groups specified by a given linkage rule:
+    >>> rule = Match("fname")
+    >>> _groups(rule, df)
+    array([2, 1, 0])
+    """
+    if (isinstance(rule, str)):
+        arr = np.copy(pd.Categorical(df[rule]).codes)
+        I = (arr == -1)  # NA value indicators
+        arr[I] = np.arange(len(arr), len(arr)+sum(I))
+        return arr
+    elif isinstance(rule, LinkageRule):
+        return rule.fit(df).groups
+    else:
+        raise NotImplementedError()
+
+
+def _groups_from_rules(rules, df):
+    """
+    Fit linkage rules to data and return groups corresponding to their logical 
+    conjunction.
+
+    This function computes the logical conjunction of a set of rules, operating 
+    at the groups level. That is, rules are fitted to the data, membership 
+    vector are obtained, and then the groups specified by these membership 
+    vectors are intersected.
+
+    Parameters
+    ----------
+    rules: list[LinkageRule]
+        List of strings or Linkage rule objects to be fitted to the data. 
+        Strings are interpreted as exact matching rules on the corresponding 
+        columns.
+
+    df: DataFrame
+        pandas DataFrame to which the rules are fitted.
+
+    Returns
+    -------
+    Membership vector representing the cluster to which each dataframe row 
+    belongs.
+
+    Notes
+    -----
+    NA values are considered to be non-matching.
+
+    Examples
+    --------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame({"fname":["Olivier", "Jean-Francois", "Alex"], 
+      "lname":["Binette", "Binette", pd.NA]})
+    >>> _groups_from_rules(["fname", "lname"], df)
+    array([2, 1, 0])
+    """
+
+    arr = np.array([_groups(rule, df) for rule in rules]).T
+    groups = np.unique(arr, axis=0, return_inverse=True)[1]
+    return groups
+```
+
+We can now implement `Match` as follows. Note that the `Graph` representation of the clustering is only computed if and when needed.
+
+```{python, eval=FALSE}
+class Match(LinkageRule):
+    """
+    Class representing an exact matching rule over a given set of columns.
+
+    Attributes
+    ----------
+    graph: igraph.Graph
+        Graph representing linkage fitted to the data. Defaults to None and is 
+        instanciated after the `fit()` function is called.
+
+    groups: integer array
+        Membership vector for the linkage clusters fitted to the data. Defaults 
+        to None and is instanciated after the `fit()` function is called.
+
+    Methods
+    -------
+    fit(df)
+        Fits linkage rule to the given dataframe.
+
+    Examples
+    --------
+    >>> import pandas as pd
+    >>> df = pd.DataFrame({"fname":["Olivier", "Jean-Francois", "Alex"], 
+    "lname":["Binette", "Binette", pd.NA]})
+
+    Link records which agree on both the "fname" and "lname" fields.
+    >>> rule = Match("fname", "lname")
+
+    Fit linkage rule to the data.
+    >>> _ = rule.fit(df)
+
+    Construct deduplicated dataframe, retaining only the first record in each cluster.
+    >>> _ = df.groupby(rule.groups).first()
+    """
+
+    def __init__(self, *args):
+        """
+        Parameters
+        ----------
+        args: list containing strings and/or LinkageRule objects.
+            The `Match` object represents the logical conjunction of the set of 
+            rules given in the `args` parameter. 
+        """
+        self.rules = args
+        self._update_graph = False
+        self.n = None
+
+    def fit(self, df):
+        self._groups = _groups_from_rules(self.rules, df)
+        self._update_graph = True
+        self.n = df.shape[0]
+
+        return self
+
+    @property
+    def groups(self):
+        return self._groups
+```
+
+One more method is needed to complete the implementation of a `GroupingRule`, namely the `graph` property. This property returns a Graph object corresponding to the matching rule. The graph is built as follows. First, we construct an inverted index for the clustering. That is, we construct a dictionary associating to each cluster the nodes which it contains. Then, an edge list is obtained by linking all pairs of nodes which belong to the same cluster. Note that the pure Python implementation below if not efficient for large clusters. This is not a problem for now since we will generally avoid computing this graph.
+
+```{python, eval=FALSE}
+# Part of the definition of the `Match` class:
+    @property
+    def graph(self) -> Graph:
+        if self._update_graph:
+            # Inverted index
+            clust = pd.DataFrame({"groups": self.groups}
+                                 ).groupby("groups").indices
+            self._graph = Graph(n=self.n)
+            self._graph.add_edges(itertools.chain.from_iterable(
+                itertools.combinations(c, 2) for c in clust.values()))
+            self._update_graph = False
+        return self._graph
+```
+
+Finally, let's implement the `Any` class. It's purpose is to take the union (i.e. logical disjunction) of a set of rules. Just like for `Match`, we can choose to operate at the groups or graph level. Here we'll work at the groups level for efficiency. That is, given a set of rules, `Any` will first compute their corresponding clusters before merging overlapping clusters.
+
+There are quite a few different ways to efficiently merge clusters. Here we'll merge clusters by computing a "path graph" representation, taking the union of these graphs, and then computing connected components. For a given clustering, say containing records a, b, and c, the "path graph" links records as a path a--b--c.
+
+First, we define the functions needed to compute path graphs:
+
+```{python, eval=FALSE}
+def pairwise(iterable):
+    """
+    Iterate over consecutive pairs:
+        s -> (s[0], s[1]), (s[1], s[2]), (s[2], s[3]), ...
+
+    Note
+    ----
+    Current implementation is from itertools' recipes list available at 
+    https://docs.python.org/3/library/itertools.html
+    """
+    a, b = itertools.tee(iterable)
+    next(b, None)
+    return zip(a, b)
+
+
+def _path_graph(rule, df):
+    """
+    Compute path graph corresponding to the rule's clustering: cluster elements 
+    are connected as a path.
+
+    Parameters
+    ----------
+    rule: string or LinkageRule
+        Linkage rule for which to compute the corresponding path graph 
+        (strings are interpreted as exact matching rules for the corresponding column).
+    df: DataFrame
+        Data to which the linkage rule is fitted.
+
+    Returns
+    -------
+    Graph object such that nodes in the same cluster (according to the fitted 
+    linkage rule) are connected as graph paths.
+    """
+    gr = _groups(rule, df)
+    
+    # Inverted index
+    clust = pd.DataFrame({"groups": gr}
+                         ).groupby("groups").indices
+    graph = Graph(n=df.shape[0])
+    graph.add_edges(itertools.chain.from_iterable(
+        pairwise(c) for c in clust.values()))
+
+    return graph
+```
+
+We can now implement the `Any` class:
+
+```{python, eval=FALSE}
+class Any(LinkageRule):
+    """
+    Class representing the logical disjunction of linkage rules.
+
+    Attributes
+    ----------
+    graph: igraph.Graph
+        Graph representing linkage fitted to the data. Defaults to None and is 
+        instanciated after the `fit()` function is called.
+
+    groups: integer array
+        Membership vector for the linkage clusters fitted to the data. Defaults 
+        to None and is instanciated after the `fit()` function is called.
+
+    Methods
+    -------
+    fit(df)
+        Fits linkage rule to the given dataframe.
+    """
+
+    def __init__(self, *args):
+        """
+        Parameters
+        ----------
+        args: list containing strings and/or LinkageRule objects.
+            The `Any` object represents the logical disjunction of the set of 
+            rules given by `args`. 
+        """
+        self.rules = args
+        self._graph = None
+        self._groups = None
+        self._update_groups = False
+
+    def fit(self, df):
+        self._update_groups = True
+        graphs_vect = [_path_graph(rule, df) for rule in self.rules]
+        self._graph = igraph.union(graphs_vect)
+        return self
+
+    @property
+    def groups(self):
+        if self._update_groups:
+            self._update_groups = False
+            self._groups = np.array(
+                self._graph.clusters().membership)
+        return self._groups
+
+    @property
+    def graph(self) -> Graph:
+        return self._graph
+```
+
+The complete Python module (still under development) implementing this approach can be found on Github at [OlivierBinette/GroupByRule](https://github.com/olivierbinette/groupbyrule).
+
+# Model Evaluation
+
+- Unfortunately, I cannot share the pantry data... but I can describe the model evaluation procedure.
+
+- Precision and recall
+- How do you estimate precision and recall?
+- Precision: easy, simply go through predicted clusters (or sample predicted clusters)
+- Recall: try to find matches that we not correctly predicted. This can be done using probabilistic record linkage models that make use of additional information and sampling highest probability of matches among non-predicted pairs.
+- Now, why not use probabilistic record linkage from the get go? Two reasons:
+  1. Deterministic record linkage is more easily intelligible and justifiable using prior knowledge regarding the data structure.
+  2. Deterministic record linkage can more easily be validated, using PRL as a tool to this end. If there is not much difference between the performance of deterministic record linkage and PRL, this indicates that the deterministic approach is likely to be sufficiently accurate in practice.
+
+
+# Final thoughts
+
+- A future for black box entity resolution? 
+  - Entity resolution is often an underspecified problem - different approaches can lead to very different answers and we need assumptions, or an understanding of the data-generating mechanism, to make it tractable.
+  - This makes it important to develop a *practice* of record linkage, such as standards for its use, validation, and evaluation, which goes beyond the suggestion of generic methodology. This practice should be rooted in the simplicity of effective methods combined with the support of more sophisticated methods, rather than only the use of black-box methods which can overstate their accuracy.
+
+
+
+
+
+
+
