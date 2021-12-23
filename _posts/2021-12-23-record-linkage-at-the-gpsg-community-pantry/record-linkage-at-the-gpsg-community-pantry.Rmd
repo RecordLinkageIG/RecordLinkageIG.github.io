@@ -22,7 +22,7 @@ citation_url: https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-
 ---
 
 
-```{r setup, include=FALSE}https://recordlinkageig.github.io/posts/welcome/
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
