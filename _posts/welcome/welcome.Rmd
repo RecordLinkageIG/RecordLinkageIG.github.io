@@ -2,6 +2,7 @@
 title: "Welcome!"
 description: |
   Welcome to the blog of ASA's Record Linkage Interest Group.
+preview: wave.png
 author:
   - name: Olivier Binette
     url: https://olivierbinette.github.io
@@ -17,7 +18,6 @@ knitr::opts_chunk$set(echo = FALSE)
 
 # Learn more about creating blogs with Distill at:
 # https://rstudio.github.io/distill/blog.html
-
 ```
 
 

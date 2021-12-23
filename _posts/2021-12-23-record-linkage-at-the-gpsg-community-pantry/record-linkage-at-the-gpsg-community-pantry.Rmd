@@ -15,7 +15,7 @@ output:
   distill::distill_article:
     self_contained: false
     toc: true
-    toc_depth: 2
+    toc_depth: 3
 draft: false
 repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
 citation_url: https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry
@@ -28,7 +28,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Note: this post is under construction.
 
-# Introduction
+## Introduction
 
 Duke's Graduate and Professional Student Government (GPSG) has been operating a community food pantry for about five years. The pantry provides non-perishable food and basic need items to graduate and professional students on campus. There is a weekly bag program, where students order customized bags of food to be picked up on Saturdays, as well as an in-person shopping program open on Thursdays and Saturdays.
 
@@ -64,7 +64,7 @@ Regarding efficiency and reliability of the software system, I describe the deve
 
 Before jumping into the technical part, let's take a step back to discuss the issue of food insecurity on campus.
 
-## Food Insecurity on Campus
+### Food Insecurity on Campus
 
 It is often surprising to people that some Duke students might struggle having access to food. After all, Duke is one of the richest campus in the US with its [12 billion endowment](https://www.dukechronicle.com/article/2021/10/duke-university-endowment-gain-56-percent-dumac-how-used-financial-aid-faculty-pay-who-manages). Prior to the covid-19 pandemic, this wealth could be seen on campus and benefit many. Every weekday, there were several conferences and events with free food. Me and many other graduate students would participate in these events, earning 3-4 free lunches every week. Free food on campus is now a thing of the past, for the most part.
 
@@ -72,7 +72,7 @@ However, free lunch or not, it's important to realize the many financial challen
 
 A 2019 study from the World Food Policy Center reported that about 19% of graduate and professional students at Duke experienced food insecurity in the past year. This means they were unable to afford a balanced and sufficient diet, they were afraid of not having enough money for food, or they skipped meals and went hungry due to lack of money. The GPSG Community Pantry has recently been leading efforts to expand food insecurity monitoring on campus -- we are hoping to have more data in 2022 and in following years.
 
-# The Record Linkage Approach
+## The Record Linkage Approach
 
 The bag order forms contains email addresses which are highly reliable for linkage. If two records have the same email, we know for certain that they are from the same customer. However, customers do not always enter the same email address when submitting orders. Despite the resquest to use a Duke email address, some customers use personal emails. Furthermore, Duke email addresses have two forms. For instance, my duke email is both `ob37@duke.edu` and `olivier.binette@duke.edu`. Emails are therefore not sufficient for linkage. Phone numbers can be used as well, but these are only available for the period when home delivery was available. 
 
@@ -80,7 +80,7 @@ First name and last initial can be used to supplement emails and phone numbers. 
 
 Combining the use of emails, phone numbers, and names, we may therefore link records which agree on any one of these attributes. This is a simple deterministic record linkage approach which should be reliable enough for the data analysis use of the pantry.
 
-## Deterministic Record Linkage Rule
+### Deterministic Record Linkage Rule
 
 To be more precise, record linkage proceeds as follows:
 
@@ -95,7 +95,7 @@ This record linkage procedure is extremely simple. It relies the fact that all t
 
 Also, the simplicity of the approach allows the use of available additional information (such as IP address and additional questions) for model validation. If the use of this additional information does not highlight any flaws with the simple deterministic approach, then this means that the deterministic approach is already good enough. We will come back to this when discussing model validation techniques.
 
-## Implementation
+### Implementation
 
 Our deterministic record linkage system is implemented in Python with some generality. The goal is for the system to be able to adapt to changes in data or processes.
 
@@ -439,7 +439,7 @@ class Any(LinkageRule):
 
 The complete Python module (still under development) implementing this approach can be found on Github at [OlivierBinette/GroupByRule](https://github.com/olivierbinette/groupbyrule).
 
-# Model Evaluation
+## Model Evaluation
 
 - Unfortunately, I cannot share the pantry data... but I can describe the model evaluation procedure.
 
@@ -452,7 +452,7 @@ The complete Python module (still under development) implementing this approach 
   2. Deterministic record linkage can more easily be validated, using PRL as a tool to this end. If there is not much difference between the performance of deterministic record linkage and PRL, this indicates that the deterministic approach is likely to be sufficiently accurate in practice.
 
 
-# Final thoughts
+## Final thoughts
 
 - A future for black box entity resolution? 
   - Entity resolution is often an underspecified problem - different approaches can lead to very different answers and we need assumptions, or an understanding of the data-generating mechanism, to make it tractable.
