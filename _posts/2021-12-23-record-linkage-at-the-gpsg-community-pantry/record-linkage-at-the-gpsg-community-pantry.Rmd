@@ -16,7 +16,7 @@ output:
     self_contained: false
     toc: true
     toc_depth: 2
-draft: true
+draft: false
 repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
 citation_url: https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry
 ---
