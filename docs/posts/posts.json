@@ -21,8 +21,8 @@
   },
   {
     "path": "posts/welcome/",
-    "title": "Blog of the Record Linkage Interest Group",
-    "description": "Welcome to the blog of the Record Linkage Interest Group. We hope you enjoy \nreading what we have to say!",
+    "title": "Welcome!",
+    "description": "Welcome to the blog of ASA's Record Linkage Interest Group.",
     "author": [
       {
         "name": "Olivier Binette",
@@ -33,7 +33,7 @@
     "categories": [],
     "contents": "\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-12-23T15:35:28-05:00",
+    "last_modified": "2021-12-23T17:15:05-05:00",
     "input_file": {}
   }
 ]
