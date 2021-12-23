@@ -124,7 +124,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["pantry.jpg"]}
+  {"type":"character","attributes":{},"value":["pantry.jpg","record-linkage-at-the-gpsg-community-pantry_files/anchor-4.2.2/anchor.min.js","record-linkage-at-the-gpsg-community-pantry_files/bowser-1.9.3/bowser.min.js","record-linkage-at-the-gpsg-community-pantry_files/distill-2.2.21/template.v2.js","record-linkage-at-the-gpsg-community-pantry_files/header-attrs-2.11/header-attrs.js","record-linkage-at-the-gpsg-community-pantry_files/jquery-3.6.0/jquery-3.6.0.js","record-linkage-at-the-gpsg-community-pantry_files/jquery-3.6.0/jquery-3.6.0.min.js","record-linkage-at-the-gpsg-community-pantry_files/jquery-3.6.0/jquery-3.6.0.min.map","record-linkage-at-the-gpsg-community-pantry_files/popper-2.6.0/popper.min.js","record-linkage-at-the-gpsg-community-pantry_files/tippy-6.2.7/tippy-bundle.umd.min.js","record-linkage-at-the-gpsg-community-pantry_files/tippy-6.2.7/tippy-light-border.css","record-linkage-at-the-gpsg-community-pantry_files/tippy-6.2.7/tippy.css","record-linkage-at-the-gpsg-community-pantry_files/tippy-6.2.7/tippy.umd.min.js","record-linkage-at-the-gpsg-community-pantry_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1511,6 +1511,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </ul>
 </nav>
 </div>
+<p><code>{r setup, include=FALSE}https://recordlinkageig.github.io/posts/welcome/ knitr::opts_chunk$set(echo = TRUE)</code></p>
 <p>Note: this post is under construction.</p>
 <h1 id="introduction">Introduction</h1>
 <p>Duke’s Graduate and Professional Student Government (GPSG) has been operating a community food pantry for about five years. The pantry provides non-perishable food and basic need items to graduate and professional students on campus. There is a weekly bag program, where students order customized bags of food to be picked up on Saturdays, as well as an in-person shopping program open on Thursdays and Saturdays.</p>
@@ -1630,7 +1631,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Also, the simplicity of the approach allows the use of available additional information (such as IP address and additional questions) for model validation. If the use of this additional information does not highlight any flaws with the simple deterministic approach, then this means that the deterministic approach is already good enough. We will come back to this when discussing model validation techniques.</p>
 <h2 id="implementation">Implementation</h2>
 <p>Our deterministic record linkage system is implemented in Python with some generality. The goal is for the system to be able to adapt to changes in data or processes.</p>
-<p>The fundamental component of the system is a <code>GroupingRule</code> class. GroupingRule objects can be fitted to data, providing either a clustering or a linkage graph. For instance, a GroupingRule might be a rule to link all records which agree on the email attribute. Another GroupingRule might summarize a set of other rules, such as taking the union or intersection of their links.</p>
+<p>The fundamental component of the system is a <code>LinkageRule</code> class. LinkageRule objects can be fitted to data, providing either a clustering or a linkage graph. For instance, a LinkageRule might be a rule to link all records which agree on the email attribute. Another LinkageRule might summarize a set of other rules, such as taking the union or intersection of their links.</p>
 <p>The interface is as follows:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> abc <span class="im">import</span> ABC, abstractmethod</span>
@@ -1660,17 +1661,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> groups(<span class="va">self</span>):</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span></code></pre></div>
 </div>
-<p>Note that <code>GroupsType</code>, our representation for cluster groups, is meant to be a numpy integer array with entries indicating what group (cluster) a given record belongs to. Such a “groups” vector should not contain NA values; rather it should contain distinct integers for records that are not in the same cluster.</p>
+<p>Note that group membership vectors, our representation for cluster groups, are meant to be a numpy integer array with entries indicating what group (cluster) a given record belongs to. Such a “groups” vector should not contain NA values; rather it should contain distinct integers for records that are not in the same cluster.</p>
 <p>We will now define two other classes, <code>Match</code> and <code>Any</code>, which allow us to implement deterministic record linkage. The <code>Match</code> class implements an exact matching rule, while <code>Any</code> is the logical disjunction of a given set of rules. Our deterministic record linkage rule for the pantry will therefore be defined as follows:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rule <span class="op">=</span> Any(Match(<span class="st">&quot;name&quot;</span>), Match(<span class="st">&quot;email&quot;</span>), Match(<span class="st">&quot;phone&quot;</span>))</span></code></pre></div>
 </div>
-<p>Following the <code>GroupingRule</code> interface, this rule will then be fitted to the data and used as follows:</p>
+<p>Following the <code>LinkageRule</code> interface, this rule will then be fitted to the data and used as follows:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rule.fit(data)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>data.groupby(rule.groups).last() <span class="co"># Get last visit data for all customers.</span></span></code></pre></div>
 </div>
-<p>The benefit of this general interface is that it is extendable. By default, the <code>Any</code> class will return connected components when requesting group clusters. However, other clustering approaches could be used. Exact matching rules could also be relaxed to fuzzy matching rules based on string distance metrics or probabilistic record linkage. All of this can be implemented as additional <code>GroupingRule</code> subclasses in a way which is compatible with the above.</p>
+<p>The benefit of this general interface is that it is extendable. By default, the <code>Any</code> class will return connected components when requesting group clusters. However, other clustering approaches could be used. Exact matching rules could also be relaxed to fuzzy matching rules based on string distance metrics or probabilistic record linkage. All of this can be implemented as additional <code>LinkageRule</code> subclasses in a way which is compatible with the above.</p>
 <p>Let’s now work on the <code>Match</code> class. For efficiency, we’ll want <code>Match</code> to operate at the groups level. That is, if <code>Match</code> is called on a set of rules, then we’ll first compute groups for these rules, before computing the intersection of these groups. This core functionality is implemented in the function <code>groups_from_rules()</code> below. The function <code>groups()</code> is a simple wrapper to interpret strings as a matching rule on the corresponding column.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1831,7 +1832,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> groups(<span class="va">self</span>):</span>
 <span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>._groups</span></code></pre></div>
 </div>
-<p>One more method is needed to complete the implementation of a <code>GroupingRule</code>, namely the <code>graph</code> property. This property returns a Graph object corresponding to the matching rule. The graph is built as follows. First, we construct an inverted index for the clustering. That is, we construct a dictionary associating to each cluster the nodes which it contains. Then, an edge list is obtained by linking all pairs of nodes which belong to the same cluster. Note that the pure Python implementation below if not efficient for large clusters. This is not a problem for now since we will generally avoid computing this graph.</p>
+<p>One more method is needed to complete the implementation of a <code>LinkageRule</code>, namely the <code>graph</code> property. This property returns a Graph object corresponding to the matching rule. The graph is built as follows. First, we construct an inverted index for the clustering. That is, we construct a dictionary associating to each cluster the nodes which it contains. Then, an edge list is obtained by linking all pairs of nodes which belong to the same cluster. Note that the pure Python implementation below if not efficient for large clusters. This is not a problem for now since we will generally avoid computing this graph.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Part of the definition of the `Match` class:</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@property</span></span>

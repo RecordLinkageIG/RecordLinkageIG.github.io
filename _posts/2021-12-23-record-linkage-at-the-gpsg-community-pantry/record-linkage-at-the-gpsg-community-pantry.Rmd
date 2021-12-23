@@ -22,7 +22,7 @@ citation_url: https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-
 ---
 
 
-```{r setup, include=FALSE}
+```{r setup, include=FALSE}https://recordlinkageig.github.io/posts/welcome/
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -99,7 +99,7 @@ Also, the simplicity of the approach allows the use of available additional info
 
 Our deterministic record linkage system is implemented in Python with some generality. The goal is for the system to be able to adapt to changes in data or processes.
 
-The fundamental component of the system is a `GroupingRule` class. GroupingRule objects can be fitted to data, providing either a clustering or a linkage graph. For instance, a GroupingRule might be a rule to link all records which agree on the email attribute. Another GroupingRule might summarize a set of other rules, such as taking the union or intersection of their links.
+The fundamental component of the system is a `LinkageRule` class. LinkageRule objects can be fitted to data, providing either a clustering or a linkage graph. For instance, a LinkageRule might be a rule to link all records which agree on the email attribute. Another LinkageRule might summarize a set of other rules, such as taking the union or intersection of their links.
 
 The interface is as follows:
 
@@ -132,7 +132,7 @@ class LinkageRule(ABC):
         pass
 ```
 
-Note that `GroupsType`, our representation for cluster groups, is meant to be a numpy integer array with entries indicating what group (cluster) a given record belongs to. Such a "groups" vector should not contain NA values; rather it should contain distinct integers for records that are not in the same cluster.
+Note that group membership vectors, our representation for cluster groups, are meant to be a numpy integer array with entries indicating what group (cluster) a given record belongs to. Such a "groups" vector should not contain NA values; rather it should contain distinct integers for records that are not in the same cluster.
 
 We will now define two other classes, `Match` and `Any`, which allow us to implement deterministic record linkage. The `Match` class implements an exact matching rule, while `Any` is the logical disjunction of a given set of rules. Our deterministic record linkage rule for the pantry will therefore be defined as follows:
 
@@ -140,14 +140,14 @@ We will now define two other classes, `Match` and `Any`, which allow us to imple
 rule = Any(Match("name"), Match("email"), Match("phone"))
 ```
 
-Following the `GroupingRule` interface, this rule will then be fitted to the data and used as follows:
+Following the `LinkageRule` interface, this rule will then be fitted to the data and used as follows:
 
 ```{python, eval=FALSE}
 rule.fit(data)
 data.groupby(rule.groups).last() # Get last visit data for all customers.
 ```
 
-The benefit of this general interface is that it is extendable. By default, the `Any` class will return connected components when requesting group clusters. However, other clustering approaches could be used. Exact matching rules could also be relaxed to fuzzy matching rules based on string distance metrics or probabilistic record linkage. All of this can be implemented as additional `GroupingRule` subclasses in a way which is compatible with the above.
+The benefit of this general interface is that it is extendable. By default, the `Any` class will return connected components when requesting group clusters. However, other clustering approaches could be used. Exact matching rules could also be relaxed to fuzzy matching rules based on string distance metrics or probabilistic record linkage. All of this can be implemented as additional `LinkageRule` subclasses in a way which is compatible with the above.
 
 Let's now work on the `Match` class. For efficiency, we'll want `Match` to operate at the groups level. That is, if `Match` is called on a set of rules, then we'll first compute groups for these rules, before computing the intersection of these groups. This core functionality is implemented in the function `groups_from_rules()` below. The function `groups()` is a simple wrapper to interpret strings as a matching rule on the corresponding column.
 
@@ -313,7 +313,7 @@ class Match(LinkageRule):
         return self._groups
 ```
 
-One more method is needed to complete the implementation of a `GroupingRule`, namely the `graph` property. This property returns a Graph object corresponding to the matching rule. The graph is built as follows. First, we construct an inverted index for the clustering. That is, we construct a dictionary associating to each cluster the nodes which it contains. Then, an edge list is obtained by linking all pairs of nodes which belong to the same cluster. Note that the pure Python implementation below if not efficient for large clusters. This is not a problem for now since we will generally avoid computing this graph.
+One more method is needed to complete the implementation of a `LinkageRule`, namely the `graph` property. This property returns a Graph object corresponding to the matching rule. The graph is built as follows. First, we construct an inverted index for the clustering. That is, we construct a dictionary associating to each cluster the nodes which it contains. Then, an edge list is obtained by linking all pairs of nodes which belong to the same cluster. Note that the pure Python implementation below if not efficient for large clusters. This is not a problem for now since we will generally avoid computing this graph.
 
 ```{python, eval=FALSE}
 # Part of the definition of the `Match` class:

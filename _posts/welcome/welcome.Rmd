@@ -1,7 +1,7 @@
 ---
 title: "Welcome!"
 description: |
-  Welcome to the blog of the Record Linkage Interest Group.
+  Welcome to the blog of ASA's Record Linkage Interest Group.
 author:
   - name: Olivier Binette
     url: https://olivierbinette.github.io
