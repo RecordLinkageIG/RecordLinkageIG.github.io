@@ -11,6 +11,7 @@ The blog is based on [Distill for Rmarkdown](https://rstudio.github.io/distill/)
 
 In order to contribute a post to this blog, you will need basic familiarity with git, github, R and Rmarkdown. If you are not familiar with these tools, contact [Olivier Binette](https://olivierbinette.github.io/) to help adapt your blog post. We recommend using [RStudio](https://www.rstudio.com/products/rstudio/) as an IDE for its visual rmarkdown editor and suite of compatible editing features. If you do not have RStudio, you will need to separately install [Pandoc](https://pandoc.org/) to render Rmarkdown documents.
 
+
 ### System configuration
 
 Make sure you have [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/) installed (you can separately install [Pandoc](https://pandoc.org/) instead of RStudio). You will also need to install the following packages in R:
@@ -37,9 +38,9 @@ The pull request will be reviewed before your post is published on RLIG's blog.
 
 ### Submission requirements checklist
 
-Make sure to review the following items before submitting your post:
+Make sure to review the following items before submitting your post.
 
-- As part of your article's metadata, you should use the following template to provide:
+- As part of your article's metadata, you should use the template below to provide:
   - Post title and description
   - Current date
   - Image preview
