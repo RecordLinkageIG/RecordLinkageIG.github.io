@@ -10,6 +10,8 @@ navbar:
       href: index.html
     - text: "Main Website"
       href: https://sites.google.com/view/rlig
+    - icon: fa fa-rss
+      href: index.xml
 output: distill::distill_article
 base_url: https://recordlinkageig.github.io
 collections:
