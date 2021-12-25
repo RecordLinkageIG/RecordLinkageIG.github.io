@@ -1,5 +1,5 @@
 
-[![R-CMD-check](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/workflows/R-CMD-check/badge.svg)](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions)
+[![render](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/workflows/R-CMD-check/badge.svg)](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions)
 
 ## Code of Conduct
 

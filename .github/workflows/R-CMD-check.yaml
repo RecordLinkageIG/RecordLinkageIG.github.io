@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main, master]
 
-name: R-CMD-check
+name: render
 
 jobs:
   R-CMD-check:
@@ -23,7 +23,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          Rscript -e "install.packages(c('distill', 'rmarkdown')"
+          Rscript -e "install.packages(c('distill', 'rmarkdown'))"
           
       - name: Cache R packages
         if: runner.os != 'Windows'
