@@ -58,10 +58,7 @@ author:
   - name: Full Name
     url: url.com
     affiliation: State University
-date: 2022-01-01System configuration
-Make sure you have R and RStudio installed (you can separately install Pandoc instead of RStudio). You will also need to install the following packages in R:
-
-
+date: 2022-01-01
 ```
 
 - At the end of your article, as part of the appendix, you should provide as section titled "About the Author(s)" which contains a short bibliography or some information regarding your background and interests. The goal is introduce you to RLIG's members and to help foster a sense of community. You can use the template below:
