@@ -527,8 +527,9 @@ There are many ways in which the record linkage approach could be improved. As p
 However, it is important to ensure that any record linkage approach is intelligible and rooted in a good understanding of the underlying data. In this context, the use of a well-thought deterministic approach can provide good performance, at least as a first step or baseline for comparison. Furthermore, it is important to spend sufficient time investigating the results of the linkage to evaluate performance. I have highlighted simple steps which can be taken to estimate precision and make a good effort at identifying missing links. This is highly informative for model validation, improvement, and for the interpretation of any following results.
 
 
+## About the Author {.appendix}
 
-
+Olivier is a PhD Candidate in the Statistical Science Department at Duke University. He works part-time as research coordinator at the GPSG Community Pantry. 
 
 
 
