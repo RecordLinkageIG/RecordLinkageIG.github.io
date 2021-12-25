@@ -24,7 +24,7 @@ install.packages(c("rmarkdown", "distill"))
 Follow these steps to create a new post:
 
 1. Fork this repository.
-2. Create a new RStudio project from version control, using git and the forked repository url. Alternatively, clone the forked repository and `cd` into it.
+2. Create a new RStudio project from version control, using the forked repository url. Alternatively, clone the forked repository and `cd` into it.
 3. Use the following R command to create a new post:
 ```r
 distill::create_post("My Post Title")
