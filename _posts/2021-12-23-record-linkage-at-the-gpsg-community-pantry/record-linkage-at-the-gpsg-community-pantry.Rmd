@@ -19,6 +19,14 @@ output:
 draft: false
 repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
 citation_url: https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry
+creative-commons: CC BY-SA
+bibliography: biblio.bib
+nocite: |
+  @Potosky1993
+  @Gomatam2002
+  @Tromp2011
+  @Campbell2008
+  @Monge1997
 ---
 
 
@@ -28,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Note: this post is under construction.
 
-![](pantry.jpg)
+![Figure from https://gpsg.duke.edu/resources-for-students/community-pantry/](pantry.jpg){.external}
 
 ## Introduction
 
