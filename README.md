@@ -50,7 +50,7 @@ Make sure to review the following items before submitting your post.
   - Image preview
   - Author information (full name, url/email address, and affiliation)
 ```md
-title: "My Post Title"
+title: "My Post Title"https://wwwhttps://www.google.com/search?q=intact+financial+corporation+most+valuable&sxsrf=AOaemvIHHMjbYMo-NH5Be-kM4tFOgUu04g:1640471538790&source=lnms&tbm=nws&sa=X&ved=2ahUKEwiJj9XagID1AhUAq3IEHch7AGUQ_AUoAXoECAEQAw.google.com/search?q=air+canada+market+value&sxsrf=AOaemvLuQulLFRHqB8h7IXM92kORxQeB9g:1640471515061&source=lnms&tbm=vid&sa=X&ved=2ahUKEwi59azPgID1AhUFZjUKHfL3ALcQ_AUoA3oECAIQBQ
 description: |
   Description of my post.
 preview: http://website.com/post-image
