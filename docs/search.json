@@ -1,19 +1,11 @@
 {
   "articles": [
     {
-      "path": "about.html",
-      "title": "About this blog",
-      "description": "Some additional details about the blog",
-      "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-12-25T15:55:22-05:00"
-    },
-    {
       "path": "index.html",
       "title": "Blog of the Record Linkage Interest Group",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-12-25T15:55:22-05:00"
+      "last_modified": "2021-12-25T16:26:31-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
