@@ -39,9 +39,29 @@ The pull request will be reviewed before your post is published on RLIG's blog.
 
 Make sure to review the following items before submitting your post:
 
-- 
+- As part of your article's metadata, you should use the following template to provide:
+  - Post title and description
+  - Current date
+  - Image preview
+  - Author information (full name, url/email address, and affiliation)
+```md
+title: "My Post Title"
+description: |
+  Description of my post.
+preview: http://website.com/post-image
+author:
+  - name: Full Name
+    url: url.com
+    affiliation: State University
+date: 2022-01-01
+```
 
+- At the end of your article, as part of the appendix, you should provide as section titled "About the Author(s)" which contains a short bibliography or some information regarding your background and interests. The goal is introduce you to RLIG's members and to help foster a sense of community. You can use the template below:
+```md
+## About the Author(s) {.appendix}
 
+The author works at State University. They are [...].
+```
 
 ## Code of Conduct
 
