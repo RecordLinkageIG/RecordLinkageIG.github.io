@@ -58,7 +58,7 @@ The weekly bag program, which began in May 2018 and is still the most popular pa
 Table: Table 1: Quasi-identifying information provided on Qualtrics bag order forms. Note that phone number and address were only required while delivery was offered. Furthermore, most customers stop answering demographic questions after a few orders.
 
 
-Gaining the most insight from this data requires linking order records made by the same customer. Identifying individual customers and associating them with an order history allows us to investigate shopping recurrence patterns and identify potential issues with the pantry's offering. For instance, we can know who stopped ordering from the pantry after the home delivery program ended. These are people who, most likely, do not have a car to get to the pantry but might benefit from new programs, such as a ride-share program or a gift card program.
+Gaining the most insight from this data requires linking order records from the same customer. Identifying individual customers and associating them with an order history allows us to investigate shopping recurrence patterns and identify potential issues with the pantry's offering. For instance, we can know who stopped ordering from the pantry after the home delivery program ended. These are people who, most likely, do not have a car to get to the pantry but might benefit from new programs, such as a ride-share program or a gift card program.
 
 This blog post describes the way in which records are linked at the Community Pantry. As we will see, the record linkage problem is not particularly difficult. It is not trivial either, however, and it does require care to ensure that it runs reliably and efficiently, and that it is intelligible and properly validated. This post goes in detail into these two aspects of the problem.
 
@@ -72,7 +72,7 @@ It is often surprising to people that some Duke students might struggle having a
 
 However, free lunch or not, it's important to realize the many financial challenges which students can face. International students on F-1 and J-1 visas have limited employment opportunities in the US. Many graduate students are married, have children or have other dependents which may not be eligible to work in the US either. Even if they are lucky enough to be paid a 9 or 12-month stipend, this stipend doesn't go very far. For other students, going to Duke means living on a mixture of loans, financial aid, financial support from parents, and side jobs. Any imbalance in this rigid system can leave students having to compromise between their education and their health.
 
-A 2019 study from the World Food Policy Center reported that about 19% of graduate and professional students at Duke experienced food insecurity in the past year. This means they were unable to afford a balanced and sufficient diet, they were afraid of not having enough money for food, or they skipped meals and went hungry due to lack of money. The GPSG Community Pantry has recently been leading efforts to expand food insecurity monitoring on campus -- we are hoping to have more data in 2022 and in following years.
+A 2019 study from the World Food Policy Center reported that about 19% of graduate and professional students at Duke experienced food insecurity in the past year. This means they were unable to afford a balanced and sufficient diet, they were afraid of not having enough money for food, or they skipped meals and went hungry due to lack of money. The GPSG Community Pantry has been leading efforts to expand food insecurity monitoring on campus -- we are hoping to have more data in 2022 and in following years.
 
 ## The Record Linkage Approach
 
@@ -151,7 +151,7 @@ data.groupby(rule.groups).last() # Get last visit data for all customers.
 
 The benefit of this general interface is that it is extendable. By default, the `Any` class will return connected components when requesting group clusters. However, other clustering approaches could be used. Exact matching rules could also be relaxed to fuzzy matching rules based on string distance metrics or probabilistic record linkage. All of this can be implemented as additional `LinkageRule` subclasses in a way which is compatible with the above.
 
-Let's now work on the `Match` class. For efficiency, we'll want `Match` to operate at the groups level. That is, if `Match` is called on a set of rules, then we'll first compute groups for these rules, before computing the intersection of these groups. This core functionality is implemented in the function `groups_from_rules()` below. The function `groups()` is a simple wrapper to interpret strings as a matching rule on the corresponding column.
+Let's now work on the `Match` class. For efficiency, we'll want `Match` to operate at the groups level. That is, if `Match` is called on a set of rules, then we'll first compute groups for these rules, before computing the intersection of these groups. This core functionality is implemented in the function `_groups_from_rules()` below. The function `_groups()` is a simple wrapper to interpret strings as a matching rule on the corresponding column.
 
 ```{python, eval=FALSE}
 import pandas as pd
@@ -200,7 +200,7 @@ def _groups(rule, df):
     array([2, 1, 0])
     """
     if (isinstance(rule, str)):
-        arr = np.copy(pd.Categorical(df[rule]).codes)
+        arr = np.array(pd.Categorical(df[rule]).codes, dtype=np.int32) # Specifying dtype avoids overflow issues
         I = (arr == -1)  # NA value indicators
         arr[I] = np.arange(len(arr), len(arr)+sum(I))
         return arr
@@ -445,13 +445,13 @@ The complete Python module (still under development) implementing this approach 
 
 There are quite a few limitations with this simple deterministic approach. We'll see in the model evaluation section that these do not affect performance to a large degree. However, for a system used with more data or over a longer timeframe, these should be carefully considered.
 
-First, the deterministic linkage does not allow the consideration of contradictory evidence. For instance, if long-form Duke email addresses are provided on two records and do not agree (e.g. "olivier.binette\@duke.edu" and "olivier.bonhomme\@duke.edu" are provided), then we know *for sure* that the records do not correspond to the same individual, even if the same name was provided (here Olivier B.). The consideration of such evidence requires the use of probabilistic record linkage, where each record pair is associated a match probability.
+First, the deterministic linkage does not allow the consideration of contradictory evidence. For instance, if long-form Duke email addresses are provided on two records and do not agree (e.g. "olivier.binette\@duke.edu" and "olivier.bonhomme\@duke.edu" are provided), then we know *for sure* that the records do not correspond to the same individual, even if the same name was provided (here Olivier B.). The consideration of such evidence could rely on probabilistic record linkage, where each record pair is associated a match probability.
 
 Second, the use of connected components to resolve transitivity can be problematic, as a single spurious link could connect two large clusters by mistake. More sophisticated graph clustering techniques, in combination with probabilistic record linkage, would be required to mitigate the issue.
 
 ## Model Evaluation
 
-I cannot share any of the data which we have at the Pantry. However, I can describe general steps to be taken to evaluate model performance in practice. This will be a bit more formal than what I do in practice do at the Pantry, but it captures the same essential process.
+I cannot share any of the data which we have at the Pantry. However, I can describe general steps to be taken to evaluate model performance in practice. 
 
 ### Pairwise Precision and Recall
 
@@ -475,7 +475,7 @@ In practice, the precision estimation process can be carried out as follows:
 2. Make a spreadsheet with all the records corresponding to the sampled clusters.
 3. Sort the spreadsheet by predicted cluster ID.
 4. Add a new empty column to the spreadsheet, called "trueSubClusters".
-5. Separately look at each predicted cluster. If the cluster should be broken up in multiple parts, use the "trueSubClusters" column to provide identifiers for true cluster membership. Note that these identifiers do not need to match across clusters.
+5. Separately look at each predicted cluster. If the cluster should be broken up in multiple parts, use the "trueSubClusters" column to provide identifiers for true cluster membership. Note that these identifiers do not need to match across predicted clusters.
 
 The spreadsheet can then be read-in and processed in a straightforward way to obtain an estimated precision value.
 
@@ -487,9 +487,7 @@ Indeed, using the same notations as above, we can write
 $$
 R = \frac{\sum_{ c \in  C} \sum_{e \in \hat C \cap  c} {\lvert e\rvert \choose 2} }{ \sum_{ c \in  C} {\lvert  c \rvert \choose 2}}.
 $$
-If precision is 1, then the denominator can be computed from the sizes of merged predicted clusters. On the other hand, the nominator simplifies to $\sum_{e \in \hat C}{\lvert e \rvert \choose 2}$ which can be computed exactly from the sizes of predicted clusters.
-https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry/
-In the case of the Pantry, wrongly separated clusters are likely to be due to small differences in names and emails. Therefore, we can identify clusters which should have been merged together as follows:
+If precision is 1, then the denominator can be computed from the sizes of merged predicted clusters. On the other hand, the nominator simplifies to $\sum_{e \in \hat C}{\lvert e \rvert \choose 2}$ which can be computed exactly from the sizes of predicted clusters. In the case of the Pantry, wrongly separated clusters are likely to be due to small differences in names and emails. Therefore, we can identify clusters which should have been merged together as follows:
 
 1. Make a spreadsheet containing canonical customer records (one representative record for each predicted individual customer).
 2. Create a new empty column named "trueClustersA".
@@ -507,7 +505,7 @@ I used the above procedures to estimate precision and recall of our simple deter
 
 **Estimated Precision: 92%**
 
-Precision is somewhat low due to about 3 relatively large clusters (around 30-50 records) which should have been broken up in 2 or three parts. 2% precision was lost due to a couple that shared a phone number, where each had about 20 order records. The vast majority of spurious links were tied to bag orders for which only the first name was provided (e.g. "Sam"). The use of negative evidence to distinguish between individuals would help resolve these cases.
+Precision is somewhat low due to about 3 relatively large clusters (around 30-50 records each) which should have been broken up in a few parts. 2% precision was lost due to a couple that shared a phone number, where each had about 20 order records. The vast majority of spurious links were tied to bag orders for which only the first name was provided (e.g. "Sam"). The use of negative evidence to distinguish between individuals would help resolve these cases.
 
 
 **Estimated Recall: 99.6%**
@@ -516,9 +514,9 @@ This is certainly an underestimate, but it does show that missing links are not 
 
 ## Final thoughts
 
-There are many ways in which the record linkage approach could be improved. As previously discussed, probabilistic record linkage would allow the consideration of negative evidence and the use of additional quasi-identifying information (such as IP addresses and other responses on the bag order forms). I'm looking forward to building on the `GroupByRule` Python module to provide a user-friendly and unified interface to more advanced methodology.
+There are many ways in which the record linkage approach could be improved. As previously discussed, probabilistic record linkage would allow the consideration of negative evidence and the use of additional quasi-identifying information (such as IP addresses and other responses on the bag order forms). I'm looking forward to building on the `GroupByRule` Python module to provide a user-friendly and unified interface to more flexible methodology.
 
-However, it is important to ensure that any record linkage approach is intelligible and rooted in sufficient knowledge of the underlying data. In this context, the use of a well-thought deterministic approach can provide good performance, at least as a first step or baseline for comparison. Furthermore, it is important to spend sufficient time investigating the results of the linkage to evaluate performance. I have highlighted simple steps which can be taken to estimate precision and make a good effort at identifying missing links. This is highly informative for model validation, improvement, and for the interpretation of any following results.
+However, it is important to ensure that any record linkage approach is intelligible and rooted in a good understanding of the underlying data. In this context, the use of a well-thought deterministic approach can provide good performance, at least as a first step or baseline for comparison. Furthermore, it is important to spend sufficient time investigating the results of the linkage to evaluate performance. I have highlighted simple steps which can be taken to estimate precision and make a good effort at identifying missing links. This is highly informative for model validation, improvement, and for the interpretation of any following results.
 
 
 

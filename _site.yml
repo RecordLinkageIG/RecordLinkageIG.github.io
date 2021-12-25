@@ -11,3 +11,8 @@ navbar:
     - text: "Main Website"
       href: https://sites.google.com/view/rlig
 output: distill::distill_article
+base_url: https://recordlinkageig.github.io
+collections:
+  posts:
+    disqus: recordlinkageig-github-io
+    share: [twitter, linkedin]
