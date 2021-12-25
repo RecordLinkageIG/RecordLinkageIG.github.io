@@ -3,13 +3,13 @@
 
 **[recordlinkageig.github.io](https://recordlinkageig.github.io)**
 
-This repository hosts the blog of the American Statistical Association's [Record Linkage Interest Group (RLIG)](https://sites.google.com/view/rlig). The blog is open to contributions from anyone with interest in deterministic and probabilistic record linkage, entity resolution, data fusion, and statistical matching. Contributions are subject to review. Contact [Olivier Binette](https://olivierbinette.github.io/) for support.
+This repository hosts the blog of the American Statistical Association's [Record Linkage Interest Group (RLIG)](https://sites.google.com/view/rlig). The blog is open to contributions from anyone with interest in deterministic and probabilistic record linkage, entity resolution, data fusion, and statistical matching. Contributions are subject to review.
 
 ## Contribute
 
 The blog is based on [Distill for Rmarkdown](https://rstudio.github.io/distill/), an [Rmarkdown](https://rmarkdown.rstudio.com/) extension for scientific and technical writing on the web.
 
-In order to contribute a post to this blog, you will need basic familiarity with git, github, R and Rmarkdown. We recommend using [RStudio](https://www.rstudio.com/products/rstudio/) as an IDE for its visual rmarkdown editor and suite of compatible editing features. If you do not have RStudio, you will need to separately install [Pandoc](https://pandoc.org/) to render Rmarkdown documents.
+In order to contribute a post to this blog, you will need basic familiarity with git, github, R and Rmarkdown. If you are not familiar with these tools, contact [Olivier Binette](https://olivierbinette.github.io/) to help adapt your blog post. We recommend using [RStudio](https://www.rstudio.com/products/rstudio/) as an IDE for its visual rmarkdown editor and suite of compatible editing features. If you do not have RStudio, you will need to separately install [Pandoc](https://pandoc.org/) to render Rmarkdown documents.
 
 ### System configuration
 
