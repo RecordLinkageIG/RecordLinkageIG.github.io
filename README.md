@@ -31,7 +31,7 @@ distill::create_post("My Post Title")
 ```
 4. This will create a new folder, named after the current date and provided post title, in the `_posts` directory. This folder contains an Rmarkdown document for you to edit.
 5. Edit the Rmarkdown document, referring to [https://rstudio.github.io/distill/](https://rstudio.github.io/distill/) for help with formatting and metadata options. You may also use previous posts as templates.
-6. Run the R command `r rmarkdown::render_site()` to render your blog post as an html file.
+6. Run the R command `rmarkdown::render_site()` to render your blog post as an html file.
 7. Commit, push, and create a pull request on [https://github.com/RecordLinkageIG/RecordLinkageIG.github.io](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io).
 
 The pull request will be reviewed before your post is published on RLIG's blog.
@@ -55,7 +55,10 @@ author:
   - name: Full Name
     url: url.com
     affiliation: State University
-date: 2022-01-01
+date: 2022-01-01System configuration
+Make sure you have R and RStudio installed (you can separately install Pandoc instead of RStudio). You will also need to install the following packages in R:
+
+
 ```
 
 - At the end of your article, as part of the appendix, you should provide as section titled "About the Author(s)" which contains a short bibliography or some information regarding your background and interests. The goal is introduce you to RLIG's members and to help foster a sense of community. You can use the template below:
