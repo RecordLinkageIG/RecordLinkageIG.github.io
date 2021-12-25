@@ -31,7 +31,8 @@ distill::create_post("My Post Title")
 ```
 4. This will create a new folder, named after the current date and provided post title, in the `_posts` directory. This folder contains an Rmarkdown document for you to edit.
 5. Edit the Rmarkdown document, referring to [https://rstudio.github.io/distill/](https://rstudio.github.io/distill/) for help with formatting and metadata options. You may also use previous posts as templates.
-6. Once you are done preparing your post, then commit, push, and create a pull request on [https://github.com/RecordLinkageIG/RecordLinkageIG.github.io](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io).
+6. Run the R command `r rmarkdown::render_site()` to render your blog post as an html file.
+7. Commit, push, and create a pull request on [https://github.com/RecordLinkageIG/RecordLinkageIG.github.io](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io).
 
 The pull request will be reviewed before your post is published on RLIG's blog.
 
