@@ -12,11 +12,11 @@ navbar:
       href: index.html
     - icon: fa fa-rss
       href: index.xml
-output: distill::distill_article
+output: 
+  distill::distill_article:
+    includes:
+      in_header: .giscus.html
 base_url: https://recordlinkageig.github.io
 collections:
   posts:
-    disqus: 
-      shortname: recordlinkageig-github-io
-      hidden: false
     share: [twitter, linkedin]

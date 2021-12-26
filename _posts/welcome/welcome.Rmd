@@ -39,7 +39,9 @@ In order to contribute a post to this blog, you will need basic familiarity with
 Make sure you have [R](https://www.r-project.org/) and [RStudio](https://www.rstudio.com/products/rstudio/) installed (you can separately install [Pandoc](https://pandoc.org/) instead of RStudio). You will also need to install the following packages in R:
 
 ```{r, eval=FALSE}
-install.packages(c("rmarkdown", "distill"))
+install.packages(c("rmarkdown", "distill"))Une demande d’autorisation d’action collective a été déposée mercredi en Cour supérieure du Québec contre Desjardins Société de placement, la Fiducie Desjardins et la Fédération des caisses Desjardins du Québec.
+
+
 ```
 
 ### Creating a new post
@@ -52,7 +54,7 @@ Follow these steps to create a new post:
 
 ```{r, eval=FALSE}
 distill::create_post("My Post Title")
-```
+```on
 
 4. This will create a new folder, named after the current date and provided post title, in the `_posts` directory. This folder contains an Rmarkdown document for you to edit.
 5. Edit the Rmarkdown document, referring to [https://rstudio.github.io/distill/](https://rstudio.github.io/distill/) for help with formatting and metadata options. You may also use previous posts as templates.
