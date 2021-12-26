@@ -2259,7 +2259,7 @@ d-article h2,
 .posts-list > h1 {
     font-weight: 300;
 }
-
+https://distillery.rbind.io/posts/2021-03-24-customizing-distill-with-htmltools-and-css/images/text_wrap.png
 d-appendix {
   background-color: #ebf3f7; /* #fdf7f9; */
   border-top: none;
@@ -2430,6 +2430,38 @@ d-appendix d-footnote-list a.footnote-backlink {
   <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+     if (!/posts/.test(location.pathname)) {
+       return;
+     }
+
+     var script = document.createElement("script");
+     script.src = "https://giscus.app/client.js";
+     script.setAttribute("data-repo", "recordlinkageig/recordlinkageig.github.io");
+     script.setAttribute("data-repo-id", "R_kgDOGisbrA");
+     script.setAttribute("data-category", "Announcements");
+     script.setAttribute("data-category-id", "DIC_kwDOGisbrM4CAaEX");
+     script.setAttribute("data-mapping", "url");
+     script.setAttribute("data-reactions-enabled", "1");
+     script.setAttribute("data-emit-metadata", "0");
+     script.setAttribute("data-theme", "light");
+     script.setAttribute("data-lang", "en");
+
+     /* wait for article to load, append script to article element */
+     var observer = new MutationObserver(function (mutations, observer) {
+       var article = document.querySelector("d-article");
+       if (article) {
+         observer.disconnect();
+         /* HACK: article scroll */
+         article.setAttribute("style", "overflow-y: hidden");
+         article.appendChild(script);
+       }
+     });
+
+     observer.observe(document.body, { childList: true });
+   });
+ </script>
 <!--/radix_placeholder_site_in_header-->
 
 
@@ -3021,11 +3053,6 @@ Tromp, Miranda, Anita C. Ravelli, Gouke J. Bonsel, Arie Hasman, and Johannes B. 
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
-    <span class="disqus-comments">
-      <i class="fas fa-comments"></i>
-      &nbsp;
-      <span class="disqus-comment-count" data-disqus-identifier="posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry/">Comment on this article</span>
-    </span>
     <span class="article-sharing">
       Share: &nbsp;
       <a href="https://twitter.com/share?text=Record%20Linkage%20at%20the%20Duke%20GPSG%20Community%20Pantry&amp;url=https%3A%2F%2Frecordlinkageig.github.io%2Fposts%2F2021-12-23-record-linkage-at-the-gpsg-community-pantry%2F">
@@ -3036,20 +3063,6 @@ Tromp, Miranda, Anita C. Ravelli, Gouke J. Bonsel, Arie Hasman, and Johannes B. 
       </a>
     </span>
   </p>
-  <script id="dsq-count-scr" src="https://recordlinkageig-github-io.disqus.com/count.js" async></script>
-  <div id="disqus_thread"></div>
-  <script type="text/javascript" cookie-consent="functionality">
-var disqus_config = function () {
-  this.page.url = 'https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry/';
-  this.page.identifier = 'posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry/';
-};
-(function() {
-  var d = document, s = d.createElement('script');
-  s.src = 'https://recordlinkageig-github-io.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-})();
-</script>
 </div>
 <!--/radix_placeholder_article_footer-->
 </div>
