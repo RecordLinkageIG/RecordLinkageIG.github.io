@@ -16,14 +16,15 @@ knitr::opts_chunk$set(
 
 **[recordlinkageig.github.io](https://recordlinkageig.github.io)**
 
-# About
+## About
+
 This repository hosts the blog of the American Statistical Association's [Record Linkage Interest Group (RLIG)](https://sites.google.com/view/rlig). 
 
-👋 The blog is open to contributions from anyone with interest in deterministic and probabilistic record linkage, entity resolution, data fusion, and statistical matching. See below for contribution instructions.
+The blog is open to contributions from anyone with interest in deterministic and probabilistic record linkage, entity resolution, data fusion, and statistical matching. See below for contribution instructions.
 
 ```{r}
 if (!require(pacman)) install.packages("pacman")
-pacman::p_load(magrittr, stringr, dplyr, xml2, lubridate, ggplot2)
+pacman::p_load(magrittr, stringr, dplyr, xml2, lubridate, ggplot2, scales)
 ```
 
 ```{r}
@@ -53,9 +54,11 @@ days_bt_posts <- scales::number((as.numeric(today() - min(posts_since_2020$dates
 ```
 
 
-#### Published posts history
+#### Some stats
 
-RLIG's blog has **`r nrow(posts)`** posts since **`r min(lubridate::as_date(dates))`**.
+- RLIG's blog has **`r nrow(posts)`** posts since **`r min(lubridate::as_date(dates))`**.
+
+- The last post was published **`r days_last_post`** days ago ([`r titles[1]`](`r links[1]`)).
 
 
 ```{r plot-obj, fig.height=1, fig.width=10}
@@ -72,7 +75,8 @@ posts %>%
     axis.text.x = element_text(size = 14),
     axis.ticks = element_blank(),
     plot.margin = margin(0, 10, 0, 10)
-  )
+  ) +
+  ggtitle("Published posts history")
 ```
 
 
@@ -165,7 +169,7 @@ The author works at State University. They are [...].
 Please note that the RecordLinkageIG.github.io project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
 
-*This readme was adapted from [https://github.com/shannonpileggi/pipinghotdata_distill](https://github.com/shannonpileggi/pipinghotdata_distill).*
+*This readme uses code from [https://github.com/shannonpileggi/pipinghotdata_distill](https://github.com/shannonpileggi/pipinghotdata_distill).*
 
 
 *Updated `r Sys.time()`*

@@ -4,20 +4,24 @@
 
 **[recordlinkageig.github.io](https://recordlinkageig.github.io)**
 
-# About
+## About
 
 This repository hosts the blog of the American Statistical Association’s
 [Record Linkage Interest Group
 (RLIG)](https://sites.google.com/view/rlig).
 
-👋 The blog is open to contributions from anyone with interest in
+The blog is open to contributions from anyone with interest in
 deterministic and probabilistic record linkage, entity resolution, data
 fusion, and statistical matching. See below for contribution
 instructions.
 
-#### Published posts history
+#### Some stats
 
-RLIG’s blog has **2** posts since **NA**.
+-   RLIG’s blog has **2** posts since **2021-12-20**.
+
+-   The last post was published **3** days ago ([Record Linkage at the
+    Duke GPSG Community
+    Pantry](https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry)).
 
 ![](README_files/figure-gfm/plot-obj-1.png)<!-- -->
 
@@ -29,7 +33,7 @@ Click to expand a full list of posts
 | Date       | Title                                                                                                                                              |
 |:-----------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2021-12-23 | [Record Linkage at the Duke GPSG Community Pantry](https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry) |
-| welcome    | [Welcome!](https://recordlinkageig.github.io/posts/welcome)                                                                                        |
+| 2021-12-20 | [Welcome!](https://recordlinkageig.github.io/posts/2021-12-20-welcome)                                                                             |
 
 </details>
 
@@ -137,7 +141,7 @@ a [Contributor Code of
 Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
 By contributing to this project, you agree to abide by its terms.
 
-*This readme was adapted from
+*This readme uses code from
 <https://github.com/shannonpileggi/pipinghotdata_distill>.*
 
-*Updated 2021-12-26 20:27:53*
+*Updated 2021-12-26 20:38:11*
