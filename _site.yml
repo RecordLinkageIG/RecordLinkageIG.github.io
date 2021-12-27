@@ -13,10 +13,10 @@ navbar:
     - icon: fa fa-rss
       href: index.xml
 output: 
-  - github_document
-  - distill::distill_article:
+  distill::distill_article:
     includes:
       in_header: .giscus.html
+  #github_document
 base_url: https://recordlinkageig.github.io
 collections:
   posts:
