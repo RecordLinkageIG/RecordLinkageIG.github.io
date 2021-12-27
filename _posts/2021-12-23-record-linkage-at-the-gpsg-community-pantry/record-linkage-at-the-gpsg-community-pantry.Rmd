@@ -7,6 +7,7 @@ author:
   - name: Olivier Binette
     url: https://olivierbinette.github.io
     affiliation: Duke University
+    orcid_id: 0000-0001-6009-5206
 date: 2021-12-23
 categories: 
   - Python

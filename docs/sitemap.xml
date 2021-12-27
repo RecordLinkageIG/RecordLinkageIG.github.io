@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
+    <loc>https://recordlinkageig.github.io/contribute.html</loc>
+    <lastmod>2021-12-27T14:48:48-05:00</lastmod>
+  </url>
+  <url>
     <loc>https://recordlinkageig.github.io/</loc>
     <lastmod>2021-12-25T18:04:22-05:00</lastmod>
   </url>
   <url>
     <loc>https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry/</loc>
-    <lastmod>2021-12-26T20:55:13-05:00</lastmod>
+    <lastmod>2021-12-27T14:38:12-05:00</lastmod>
   </url>
   <url>
     <loc>https://recordlinkageig.github.io/posts/2021-12-20-welcome/</loc>
-    <lastmod>2021-12-26T20:54:59-05:00</lastmod>
+    <lastmod>2021-12-27T14:55:01-05:00</lastmod>
   </url>
 </urlset>

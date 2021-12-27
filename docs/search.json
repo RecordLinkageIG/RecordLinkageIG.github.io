@@ -1,11 +1,25 @@
 {
   "articles": [
     {
+      "path": "contribute.html",
+      "title": "How to Contribute",
+      "description": "This blog is open to contributions from everyone.\n",
+      "author": [
+        {
+          "name": "Olivier Binette",
+          "url": "https://olivierbinette.github.io"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\nThe blog is open to contributions from anyone with interest in deterministic and probabilistic record linkage, entity resolution, data fusion, and statistical matching. See below for contribution instructions.\n\n\n\n\n\n\nSome stats\nRLIG’s blog has 2 posts since 2021-12-20.\nThe last post was published 4 days ago (Record Linkage at the Duke GPSG Community Pantry).\n\n\n\n\nClick to expand a full list of posts\n\nDate\nTitle\n2021-12-23\nRecord Linkage at the Duke GPSG Community Pantry\n2021-12-20\nWelcome!\n\nContribution Instructions\nThe blog is based on Distill for Rmarkdown, an Rmarkdown extension for scientific and technical writing on the web.\nIn order to contribute a post to this blog, you will need basic familiarity with git, github, R and Rmarkdown. If you are not familiar with these tools, contact Olivier Binette to help adapt your blog post. We recommend using RStudio as an IDE for its visual rmarkdown editor and suite of compatible editing features. If you do not have RStudio, you will need to separately install Pandoc to render Rmarkdown documents.\nSystem configuration\nMake sure you have R and RStudio installed (you can separately install Pandoc instead of RStudio). You will also need to install the following packages in R:\ninstall.packages(c(\"rmarkdown\", \"distill\"))\nCreating a new post\nFollow these steps to create a new post:\nFork the Github repository https://github.com/RecordLinkageIG/RecordLinkageIG.github.io\nCreate a new RStudio project from version control, using the forked repository url. Alternatively, clone the forked repository and cd into it.\nUse the following R command to create a new post:\ndistill::create_post(\"My Post Title\")\nThis will create a new folder, named after the current date and provided post title, in the _posts directory. This folder contains an Rmarkdown document for you to edit.\nEdit the Rmarkdown document, referring to https://rstudio.github.io/distill/ for help with formatting and metadata options. You may also use previous posts as templates.\nRun the following R command to render your blog post as an html file:\nrmarkdown::render_site()\nCommit, push, and create a pull request on https://github.com/RecordLinkageIG/RecordLinkageIG.github.io.\nThe pull request will be reviewed before your post is published on RLIG’s blog.\nSubmission requirements checklist\nMake sure to review the following items before submitting your post.\nAs part of your article’s metadata, you should use the template below to provide:\nPost title and description\nCurrent date\nImage preview\nAuthor information (full name, url/email address, and affiliation)\n\ntitle: \"My Post Title\"\ndescription: |\n  Description of my post.\npreview: http://website.com/post-image\nauthor:\n  - name: Full Name\n    url: url.com\n    affiliation: State University\ndate: 2022-01-01\nAt the end of your article, as part of the appendix, you should provide as section titled “About the Author(s)” which contains a short bibliography or some information regarding your background and interests. The goal is introduce you to RLIG’s members and to help foster a sense of community. You can use the template below:\n## About the Author(s) {.appendix}\n\nThe author works at State University. They are [...].\nCode of Conduct\nPlease note that the RecordLinkageIG.github.io project is released with a Contributor Code of Conduct. By contributing to this project, you agree to abide by its terms.\nAcknowledgements\nThis document uses code from https://github.com/shannonpileggi/pipinghotdata_distill.\nUpdated 2021-12-27 14:54:37\n\n\n\n",
+      "last_modified": "2021-12-27T14:54:38-05:00"
+    },
+    {
       "path": "index.html",
       "title": "Blog of the Record Linkage Interest Group",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-12-26T20:59:02-05:00"
+      "last_modified": "2021-12-27T14:54:38-05:00"
     }
   ],
   "collections": ["posts/posts.json"]
