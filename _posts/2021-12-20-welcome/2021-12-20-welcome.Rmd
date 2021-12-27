@@ -6,21 +6,28 @@ preview: wave.png
 author:
   - name: Olivier Binette
     url: https://olivierbinette.github.io
-    affiliation: Duke University
+    affiliation: Duke Universityhttps://github.com/RecordLinkageIG/RecordLinkageIG.github.io/blob/master/README_files/figure-gfm/plot-obj-1.png
     orcid_id: 0000-0001-6009-5206
-date: 12-20-2021
+date: 12-20-2021https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry/
 repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
 citation: false
 output:
   distill::distill_article:
     self_contained: false
-    toc: true
-    toc_depth: 3
+    toc: truehttps://github.com/RecordLinkageIG/RecordLinkageIG.github.io/blob/master/README_files/figure-gfm/plot-obj-1.png
+    toc_depth: 3About
+This repository hosts the blog of the American Statistical Association’s Record Linkage Interest Group (RLIG).
+
+The blog is open to contributions from anyone with interest in deterministic and probabilistic record linkage, entity resolution, data fusion, and statistical matching. See below for contribution instructions.
+
+Some stats
+
 ---
 
 Welcome! This is the blog of the American Statistical Association's Record Linkage Interest Group (RLIG).
 
-If you are interested in deterministic and probabilistic record linkage, entity resolution, data fusion, or statistical matching, then this is for you. We hope you become a member of RLIG (it's free) to stay up to date with news and events in our community. You can learn more on our main website at [https://sites.google.com/view/rlig/](https://sites.google.com/view/rlig/).
+
+If you are interested in deterministic and probabilistic record linkage, entity resolution, data fusion, or statistical matching, then this is for you. We hope you become a member of RLIG (it's free) to stay up to date with news and events in our community. You can learn more on our main website at [https://sites.google.com/view/ensitive to braking and accelerating, but once I figured that out it was, in my opinion, pretty straight f...rlig/](https://sites.google.com/view/rlig/).
 
 We hope this blog will help foster community within RLIG. We encourage everyone to contribute. Posts can be short, such as to share interesting papers and associated thoughts, or they can be longer to go into any topic you find interesting. You can comment on posts to get in touch with their authors.
 
