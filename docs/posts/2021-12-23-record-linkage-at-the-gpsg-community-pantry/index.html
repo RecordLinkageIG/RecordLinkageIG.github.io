@@ -2430,38 +2430,6 @@ d-appendix d-footnote-list a.footnote-backlink {
   <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
-<script>
-   document.addEventListener("DOMContentLoaded", function () {
-     if (!/posts/.test(location.pathname)) {
-       return;
-     }
-
-     var script = document.createElement("script");
-     script.src = "https://giscus.app/client.js";
-     script.setAttribute("data-repo", "recordlinkageig/recordlinkageig.github.io");
-     script.setAttribute("data-repo-id", "R_kgDOGisbrA");
-     script.setAttribute("data-category", "Announcements");
-     script.setAttribute("data-category-id", "DIC_kwDOGisbrM4CAaEX");
-     script.setAttribute("data-mapping", "url");
-     script.setAttribute("data-reactions-enabled", "1");
-     script.setAttribute("data-emit-metadata", "0");
-     script.setAttribute("data-theme", "light");
-     script.setAttribute("data-lang", "en");
-
-     /* wait for article to load, append script to article element */
-     var observer = new MutationObserver(function (mutations, observer) {
-       var article = document.querySelector("d-article");
-       if (article) {
-         observer.disconnect();
-         /* HACK: article scroll */
-         article.setAttribute("style", "overflow-y: hidden");
-         article.appendChild(script);
-       }
-     });
-
-     observer.observe(document.body, { childList: true });
-   });
- </script>
 <!--/radix_placeholder_site_in_header-->
 
 
@@ -3060,6 +3028,9 @@ Tromp, Miranda, Anita C. Ravelli, Gouke J. Bonsel, Arie Hasman, and Johannes B. 
       </a>
       <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Frecordlinkageig.github.io%2Fposts%2F2021-12-23-record-linkage-at-the-gpsg-community-pantry%2F&amp;title=Record%20Linkage%20at%20the%20Duke%20GPSG%20Community%20Pantry">
         <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Frecordlinkageig.github.io%2Fposts%2F2021-12-23-record-linkage-at-the-gpsg-community-pantry%2F">
+        <i class="fab fa-facebook"></i>
       </a>
     </span>
   </p>
