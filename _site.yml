@@ -8,8 +8,12 @@ navbar:
   right:
     - text: "Main Website"
       href: https://sites.google.com/view/rlig
+    - text: "Contribute"
+      href: contribute.html
     - text: "Blog"
       href: index.html
+    - icon: fa fa-github
+      href: https://github.com/RecordLinkageIG/RecordLinkageIG.github.io
     - icon: fa fa-rss
       href: index.xml
 output: 
