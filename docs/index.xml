@@ -22,11 +22,11 @@
     <item>
       <title>Welcome!</title>
       <dc:creator>Olivier Binette</dc:creator>
-      <link>https://recordlinkageig.github.io/posts/welcome</link>
+      <link>https://recordlinkageig.github.io/posts/2021-12-20-welcome</link>
       <description>Welcome to the blog of ASA's Record Linkage Interest Group.</description>
-      <guid>https://recordlinkageig.github.io/posts/welcome</guid>
-      <pubDate>Thu, 23 Dec 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://recordlinkageig.github.io/posts/welcome/wave.png" medium="image" type="image/png" width="512" height="512"/>
+      <guid>https://recordlinkageig.github.io/posts/2021-12-20-welcome</guid>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://recordlinkageig.github.io/posts/2021-12-20-welcome/wave.png" medium="image" type="image/png" width="512" height="512"/>
     </item>
   </channel>
 </rss>

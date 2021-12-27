@@ -7,7 +7,7 @@ author:
   - name: Olivier Binette
     url: https://olivierbinette.github.io
     affiliation: Duke University
-date: 12-23-2021
+date: 12-20-2021
 repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
 output:
   distill::distill_article:
