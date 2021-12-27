@@ -61,7 +61,7 @@ days_bt_posts <- scales::number((as.numeric(today() - min(posts_since_2020$dates
 - The last post was published **`r days_last_post`** days ago ([`r titles[1]`](`r links[1]`)).
 
 
-```{r plot-obj, fig.height=1, fig.width=10}
+```{r plot-obj, fig.height=1, fig.width=10, dpi=300}
 # Create plot object
 posts %>%
   ggplot(aes(x = lubridate::as_date(dates), y = 1)) +
