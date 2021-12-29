@@ -112,3 +112,9 @@ d-appendix {
 d-article div.sourceCode pre { 
   overflow: auto !important;
 }
+
+
+.algolia-autocomplete {
+  max-width: 180px;
+  min-width: 60px;
+}

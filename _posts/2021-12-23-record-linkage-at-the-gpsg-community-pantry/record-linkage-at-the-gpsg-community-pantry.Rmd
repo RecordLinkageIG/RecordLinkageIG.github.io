@@ -35,8 +35,6 @@ nocite: |
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Note: this post is under construction.
-
 ![Figure from https://gpsg.duke.edu/resources-for-students/community-pantry/](pantry.jpg){.external}
 
 ## Introduction
