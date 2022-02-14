@@ -1,7 +1,3 @@
----
-output: rmarkdown::github_document
----
-
 
 
 [![pages-build-deployment](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/pages/pages-build-deployment) [![render](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/R-CMD-check.yaml)
