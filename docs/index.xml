@@ -7,7 +7,16 @@
     <description>Blog of the Record Linkage Interest Group
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 23 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Linkage Seminar Series - Thursday February 24</title>
+      <dc:creator>RLIG</dc:creator>
+      <link>https://recordlinkageig.github.io/posts/2022-02-16-youre-invited-linkage-seminar-series-thursday-february-24</link>
+      <description>For February’s Linkage Seminar, Amy O’Hara will be joined by Thais Menezes, a PhD student at SFI Centre for Research Training in Foundations of Data Science, University College Dublin. Thais’ work incorporates the household structure in recording linkage matching in the Ireland census database to make the process of matching individuals easier and more accurate.</description>
+      <guid>https://recordlinkageig.github.io/posts/2022-02-16-youre-invited-linkage-seminar-series-thursday-february-24</guid>
+      <pubDate>Wed, 16 Feb 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://recordlinkageig.github.io/posts/2022-02-16-youre-invited-linkage-seminar-series-thursday-february-24/portrait.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Record Linkage at the Duke GPSG Community Pantry</title>
       <dc:creator>Olivier Binette</dc:creator>
