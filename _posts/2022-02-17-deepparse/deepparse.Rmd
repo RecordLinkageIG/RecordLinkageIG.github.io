@@ -3,8 +3,7 @@ title: "deepparse"
 description: |
  Deepparse a Python state-of-the-art library for parsing multinational street addresses using deep learning.
 author:
-  - name: RLIG
-    url: {}
+  - name: Marouane Yassine and David Beauchemin
 date: 2022-02-17
 output:
   distill::distill_article:
