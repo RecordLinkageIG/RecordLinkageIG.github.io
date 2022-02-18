@@ -7,7 +7,17 @@
     <description>Blog of the Record Linkage Interest Group
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 16 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>deepparse</title>
+      <dc:creator>Marouane Yassine</dc:creator>
+      <dc:creator>David Beauchemin</dc:creator>
+      <link>https://recordlinkageig.github.io/posts/2022-02-17-deepparse</link>
+      <description>Deepparse: a state-of-the-art Python library for parsing multinational street addresses using deep learning.</description>
+      <guid>https://recordlinkageig.github.io/posts/2022-02-17-deepparse</guid>
+      <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://raw.githubusercontent.com/GRAAL-Research/deepparse/master/docs/source/_static/logos/deepparse.png" medium="image" type="image/png"/>
+    </item>
     <item>
       <title>Linkage Seminar Series - Thursday February 24</title>
       <dc:creator>RLIG</dc:creator>

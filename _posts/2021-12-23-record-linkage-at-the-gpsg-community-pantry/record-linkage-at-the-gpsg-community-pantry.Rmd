@@ -528,8 +528,6 @@ However, it is important to ensure that any record linkage approach is intelligi
 
 ## About the Author {.appendix}
 
-Olivier is a PhD Candidate in the Statistical Science Department at Duke University. He works part-time as research coordinator at the GPSG Community Pantry. 
-There are lots of other ways to support and contribute to distilltools. Please see the contributing guide for more details.
-
+**Olivier Binette** is a PhD Candidate in the Statistical Science Department at Duke University. He works part-time as research coordinator at the GPSG Community Pantry. 
 
 

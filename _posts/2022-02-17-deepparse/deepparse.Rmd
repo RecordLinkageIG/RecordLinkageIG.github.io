@@ -1,20 +1,32 @@
 ---
 title: "deepparse"
 description: |
- Deepparse a Python state-of-the-art library for parsing multinational street addresses using deep learning.
+ Deepparse: a state-of-the-art Python library for parsing multinational street addresses using deep learning.
+preview: https://raw.githubusercontent.com/GRAAL-Research/deepparse/master/docs/source/_static/logos/deepparse.png
 author:
-  - name: Marouane Yassine and David Beauchemin
+  - name: Marouane Yassine
+    affiliation: Institute Intelligence and Data, Laval University
+    url: https://www.linkedin.com/in/marouaneyassine1
+  - name: David Beauchemin
+    affiliation: Group for Research in Artificial Intelligence, Laval University
+    url: https://www.linkedin.com/in/david-beauchemin/
+    orcid_id: 0000-0002-4084-8239
 date: 2022-02-17
+repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
 output:
   distill::distill_article:
     self_contained: false
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval=FALSE)
+```
+
 # Deepparse
 
 Record linkage consists of identifying multiple entries which refer to the same entity within a database or other data sources. Since many real-world entities are at least partially identified by their physical location, data parsing can prove itself to be quite useful in the context of record linkage.
 
-Deepparse (deepparse.org) is an open-source python package that features state-of-the-art natural language processing models trained to achieve the task of address parsing. Contrary to many existing solutions, deepparse has been created with the objective of efficient multinational address parsing. Therefore, our models have been trained on data from 20 countries with different languages and address formats, and yielded accuracies around 99% when tested. In addition, we have conducted tests to evaluate the degree to which these models can generalize their performance beyond the countries in which they were trained. The results and details can be found in our published paper [Leveraging subword embeddings for multinational address parsing](https://ieeexplore.ieee.org/document/9357170).
+Deepparse ([deepparse.org](https://deepparse.org)) is an open-source python package that features state-of-the-art natural language processing models trained to achieve the task of address parsing. Contrary to many existing solutions, deepparse has been created with the objective of efficient multinational address parsing. Therefore, our models have been trained on data from 20 countries with different languages and address formats, and yielded accuracies around 99% when tested. In addition, we have conducted tests to evaluate the degree to which these models can generalize their performance beyond the countries in which they were trained. The results and details can be found in our published paper [Leveraging subword embeddings for multinational address parsing](https://ieeexplore.ieee.org/document/9357170).
 
 In this post, we are going to cover the four main features of deepparse, namely:
 
@@ -29,24 +41,23 @@ Whether the addresses you wish to parse originate from the countries on which de
 
 First, you’ll need to choose one of the featured pre-trained models and instantiate an [AddressParser](https://deepparse.org/parser.html#deepparse.parser.AddressParser). We offer the three following models:
 
-- bpemb: named after the multilingual subword embeddings used to train it, this model yields the best overall performance but suffers from a heavy memory footprint,
-- fasttext: this model’s architecture is similar to bpemb’s but uses FastText’s pre-trained french embeddings (http://fasttext.cc/). This model is lighter and faster than the previous one whilst still offering a good performance,
-- fasttext-light: this model is identical to the fasttext model, but uses an optimisation technique to make its memory usage even lower.
+- **bpemb**: named after the multilingual subword embeddings used to train it, this model yields the best overall performance but suffers from a heavy memory footprint,
+- **fasttext**: this model’s architecture is similar to bpemb’s but uses FastText’s pre-trained french embeddings (http://fasttext.cc/). This model is lighter and faster than the previous one whilst still offering a good performance,
+- **fasttext-light**: this model is identical to the fasttext model, but uses an optimisation technique to make its memory usage even lower.
 
 In addition to these models, we offer the possibility of adding an attention mechanism to further enhance performance.
 
-``` python
+```{python}
 from deepparse.parser import AddressParser
 
 parser = AddressParser(model_type="bpemb", attention_mechanism=True, device=0)
-
 ```
 
 It is also possible to use a GPU to make the models’ predictions faster with the `device` argument.
 
 Once the `AddressParser` is defined, you can parse an address or a list of addresses in any language with a simple call to the parser.
 
-``` python
+```{python}
 addreses = ["서울특별시 종로구 사직로3길 23", "777 Brockton Avenue, Abington MA 2351"]
 
 parsed_addresses = parser(addreses)
@@ -58,7 +69,7 @@ for parsed_address in parsed_addresses:
 
 OUT:
 
-``` python
+```{python}
 [('서울특별시', 'Province'), ('종로구', 'Municipality'), ('사직로3길', 'StreetName'), ('23', 'StreetNumber')]
 [('777', 'StreetNumber'), ('Brockton', 'StreetName'), ('Avenue,', 'StreetName'), ('Abington', 'Municipality'), ('MA', 'Province'), ('2351', 'PostalCode')]
 
@@ -70,7 +81,7 @@ As mentioned before, deepparse’s models have been trained on a select number o
 
 Retraining a model is as simple as making a call to an [`AddressParser`’s `retrain()`](https://deepparse.org/parser.html#deepparse.parser.AddressParser.retrain) method. The retrained model will be of the same type as the one with which the `AddressParser` was initialized.
 
-``` python
+```{python}
 training_container = PickleDatasetContainer(“PATH TO TRAINING DATA”)
 
 address_parser = AddressParser(model_type="fasttext”)
@@ -81,7 +92,7 @@ Multiple arguments enable you to configure the training process’s hyperparamet
 
 Furthermore, if you wish to test your retrained model’s performance, you can use the `test()` function to compute and return the main accuracy on a test sample.
 
-``` python
+```{python}
 testing_container = PickleDatasetContainer(“PATH TO TESTING DATA”)
 
 address_parser.test(testing_container)
@@ -96,14 +107,14 @@ Just like the original models are not enough to cover all use cases, one may als
 
 For instance, let’s suppose we wish to retrain a model to recognize postal boxes, towns and countries. First of all, we would need to define a dictionary with the appropriate tags.
 
-``` python
+```{python}
 tags = {"po_box": 0, "town": 1, "country": 2, "EOS": 3}
 ```
 Notice the presence of an extra tag (i.e. EOS). This tag must be present in the dictionary for the retraining to function correctly.
 
 Once the tags are defined, we simply need to run the retraining process.
 
-``` python
+```{python}
 address_parser.retrain(training_container,
                        train_ratio=0.8,
                        epochs=100,
@@ -118,7 +129,7 @@ address_parser.retrain(training_container,
 
 Finally, if you are a machine/deep learning practitioner, you might be interested in altering our models’ architecture to experiment with different hyperparameters. All the parsing models are sequence-to-sequence artificial neural networks consisting of an encoder and a decoder, built using LSTMs. While retraining a model, you can easily modify the number of layers in each part of the network and the dimensions of the hidden state using the `seq2seq_params` argument. Like the tags, new parameters must be defined inside a dictionary.
 
-``` python
+```{python}
 seq2seq_params = {
     "encoder_hidden_size": 512,
     "decoder_hidden_size": 512
@@ -135,3 +146,13 @@ address_parser.retrain(training_container,
 When address parsing stands in the way of a successful record linkage, deepparse can alleviate some of the task’s complexity by providing a good parsing performance which can be further enhanced using its retraining features.
 
 We welcome contributions to the library, as well as questions. So do not hesitate to stop by the [Github repository](https://github.com/GRAAL-Research/deepparse) if you have any inquiries!
+
+## About the Authors {.appendix}
+
+**Marouane Yassine** is a data scientist at Laval University’s Institute Intelligence and Data. With a background in software engineering, he is passionate about deep learning and natural language processing and loves to perform research and build solutions related to those exciting fields.
+
+**David Beauchemin** trained as an actuary, computer scientist, software engineer and holds an MSc in machine learning. He is currently a Ph.D. student in machine learning. His expertise is at the crossroads of insurance, laws, machine learning, software engineering, and the operationalization of AI systems.
+
+
+
+
