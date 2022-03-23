@@ -7,7 +7,16 @@
     <description>Blog of the Record Linkage Interest Group
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 17 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>BLS Statistical Seminar on Monday, March 28th</title>
+      <dc:creator>RLIG</dc:creator>
+      <link>https://recordlinkageig.github.io/posts/2022-03-22-bls-statistical-seminar-on-monday-march-28th</link>
+      <description>Data Analysis after Record Linkage: sources of error, consequences, and possible solutions, Dr. Martin Slawski, Department of Statistics, Volgenau School of Engineering, George Mason University</description>
+      <guid>https://recordlinkageig.github.io/posts/2022-03-22-bls-statistical-seminar-on-monday-march-28th</guid>
+      <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://img.vendingmarketwatch.com/files/base/cygnus/vmw/image/2020/09/16x9/US_Bureaw_Labor_Stats_WIKIPEDIA.5f57a9653b517.png" medium="image" type="image/png"/>
+    </item>
     <item>
       <title>deepparse</title>
       <dc:creator>Marouane Yassine</dc:creator>
