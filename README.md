@@ -1,6 +1,3 @@
----
-output: rmarkdown::github_document
----
 
 
 
