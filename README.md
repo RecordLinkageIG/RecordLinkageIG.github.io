@@ -1,3 +1,8 @@
+---
+output: rmarkdown::github_document
+---
+
+
 
 [![pages-build-deployment](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/pages/pages-build-deployment) [![render](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/RecordLinkageIG/RecordLinkageIG.github.io/actions/workflows/R-CMD-check.yaml)
 
@@ -20,38 +25,6 @@ The blog is open to contributions from anyone with interest in deterministic and
 
 </div>
 
-
-
-#### Some stats
-
-- RLIG's blog has **5** posts since **2021-12-20**.
-
-- The last post was published **0** days ago ([BLS Statistical Seminar on Monday, March 28th](https://recordlinkageig.github.io/posts/2022-03-22-bls-statistical-seminar-on-monday-march-28th)).
-
-
-<div class="layout-chunk" data-layout="l-body">
-<img src="README_files/figure-html5/plot-obj-1.png" width="3000" />
-
-</div>
-
-
-
-
-<details><summary> Click to expand a full list of posts</summary>
-
-<div class="layout-chunk" data-layout="l-body">
-
-|Date       |Title                                                                                                                                                         |
-|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|2022-03-22 |[BLS Statistical Seminar on Monday, March 28th](https://recordlinkageig.github.io/posts/2022-03-22-bls-statistical-seminar-on-monday-march-28th)              |
-|2022-02-17 |[deepparse](https://recordlinkageig.github.io/posts/2022-02-17-deepparse)                                                                                     |
-|2022-02-16 |[Linkage Seminar Series - Thursday February 24](https://recordlinkageig.github.io/posts/2022-02-16-youre-invited-linkage-seminar-series-thursday-february-24) |
-|2021-12-23 |[Record Linkage at the Duke GPSG Community Pantry](https://recordlinkageig.github.io/posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry)            |
-|2021-12-20 |[Welcome!](https://recordlinkageig.github.io/posts/2021-12-20-welcome)                                                                                        |
-
-</div>
-
-</details>
 
 
 ## Contribute
@@ -134,6 +107,6 @@ Please note that the RecordLinkageIG.github.io project is released with a [Contr
 *This readme uses code from [https://github.com/shannonpileggi/pipinghotdata_distill](https://github.com/shannonpileggi/pipinghotdata_distill).*
 
 
-*Updated 2022-03-22 21:16:46*
+*Updated 2022-03-22 21:19:16*
 ```{.r .distill-force-highlighting-css}
 ```
