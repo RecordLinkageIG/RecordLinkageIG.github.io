@@ -11,6 +11,8 @@ author:
 date: 12-20-2021
 repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
 citation: false
+categories:
+  - Articles
 output:
   distill::distill_article:
     self_contained: false

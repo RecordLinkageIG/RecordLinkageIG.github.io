@@ -5,6 +5,8 @@ description: |
 author:
   - name: RLIG
 date: 2022-02-16
+categories:
+  - Events
 output:
   distill::distill_article:
     self_contained: false

@@ -10,6 +10,7 @@ author:
     orcid_id: 0000-0001-6009-5206
 date: 2021-12-23
 categories: 
+  - Full Post
   - Python
   - Record Linkage
 output:

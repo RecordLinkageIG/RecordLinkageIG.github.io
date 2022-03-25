@@ -13,6 +13,8 @@ author:
     orcid_id: 0000-0002-4084-8239
 date: 2022-02-17
 repository_url: https://github.com/recordlinkageig/recordlinkageig.github.io
+categories:
+  - Full Post
 output:
   distill::distill_article:
     self_contained: false

@@ -6,6 +6,8 @@ preview: https://img.vendingmarketwatch.com/files/base/cygnus/vmw/image/2020/09/
 author:
   - name: RLIG
 date: 2022-03-22
+categories:
+  - Events
 output:
   distill::distill_article:
     self_contained: false
