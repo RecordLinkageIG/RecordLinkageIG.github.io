@@ -111,12 +111,10 @@
       }
     ],
     "date": "2021-12-20",
-    "categories": [
-      "Articles"
-    ],
+    "categories": [],
     "contents": "\n\nContents\nHow to Contribute\nCode of Conduct\n\nWelcome! This is the blog of the American Statistical Association’s\nRecord Linkage Interest Group (RLIG).\nIf you are interested in deterministic and probabilistic record\nlinkage, entity resolution, data fusion, or statistical matching, then\nthis is for you. We hope you become a member of RLIG (it’s free) to stay\nup to date with news and events in our community. You can learn more on\nour main website at https://sites.google.com/view/rlig/.\nWe hope this blog will help foster community within RLIG. We\nencourage everyone to contribute. Posts can be short, such as to share\ninteresting papers and associated thoughts, or they can be longer to go\ninto any topic you find interesting. You can comment on posts to get in\ntouch with their authors.\nFirst and foremost, we want this blog to be a welcoming place for\nall. There is no “right” way to write posts – express yourself as you\nlike. We want to hear your unique perspective. Reply to comments,\nwelcome feedback, and make connections!\nInstructions to write blog posts are available on the Contribute\npage. It might seem a bit overwhelming if you have not worked with these\ntools before. However, we are here to help. If you’d like to post\nsomething but don’t want to use R, we’ll create the post for you. If\nyou’re unsure about any of the steps below, get in touch and we’ll\nprovide support. Contact me, Olivier Binette, for any\nquestion. I’ll be more than happy to help you contribute to the\nblog.\nHow to Contribute\nSee the Contribute\npage for information on how to contribute to this blog.\nCode of Conduct\nPlease note that the RecordLinkageIG.github.io project is released\nwith a Contributor\nCode of Conduct. By contributing to this project, you agree to abide\nby its terms.\n\n\n\n",
     "preview": "posts/2021-12-20-welcome/wave.png",
-    "last_modified": "2022-03-25T17:36:29-04:00",
+    "last_modified": "2022-03-25T17:52:26-04:00",
     "input_file": "2021-12-20-welcome.knit.md",
     "preview_width": 512,
     "preview_height": 512
