@@ -5,6 +5,7 @@ description: |
 author:
   - name: RLIG
 date: 2022-02-16
+preview: portrait.jpg
 categories:
   - Events
 output:
