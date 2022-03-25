@@ -4,7 +4,7 @@ description: |
    Roee Gutman will present work that view record linkage as a missing data problem and he will describe Bayesian procedures that utilize data features that are frequently encountered in public health applications.
 author:
   - name: RLIG
-date: 2022-02-16
+date: 2022-03-25
 preview: portrait.jpg
 categories:
   - Events

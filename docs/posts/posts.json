@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2022-03-25-linkage-seminar-series-friday-april-1st/",
+    "title": "Linkage Seminar Series - Friday April 1st",
+    "description": "Roee Gutman will present work that view record linkage as a missing data problem and he will describe Bayesian procedures that utilize data features that are frequently encountered in public health applications.",
+    "author": [
+      {
+        "name": "RLIG",
+        "url": {}
+      }
+    ],
+    "date": "2022-03-25",
+    "categories": [
+      "Events"
+    ],
+    "contents": "\nYou are invited\n\n\n\nMDI and the ASA Record Linkage Interest Group’s Linkage Seminar\nSeries: \nBayesian Procedures for File Linking with Application to\nHealth Services Research \nFriday, April 1, 2022\n2 PM ET\n Register\nHere \nZoom Webinar\n\nRoee Gutman will present work that view record linkage as a missing\ndata problem and he will describe Bayesian procedures that utilize data\nfeatures that are frequently encountered in public health applications.\nThese procedures improve the linkage, and result in more accurate and\nprecise estimates of scientifically important associations. The first\nprocedure incorporates associations between variables exclusive to one\nof the datasets in the linkage process. The second procedure ensures\nthat individuals receiving care from the same provider in one file are\nlinked to individuals receiving care from a similar provider in the\nother file. Roee will demonstrate these procedures using two\napplications: one combines Medicare claims records and Vital Statistics\nMortality records to study the association between end-of-life medical\nexpenses and causes of death. A second application combines records from\nthe National Trauma Databank with Medicare claims data to study the\nrelationship between injury characteristics and successful discharge to\nthe community among patients with traumatic brain injury.\nThis seminar will be recorded and resources will be posted\nonline after the event.\nGuest Speaker: Roee\nGutman\n\n\nRoee Gutman\nRoee Gutman is an Associate Professor in the Department of\nBiostatistics at Brown University. His areas of expertise are causal\ninference, file linkage, missing data, Bayesian analysis and their\napplication to health services research. He has been the lead\nstatistician on multiple NIH and VA grants, and he has received two\nPCORI methods award. Roee has developed multiple procedures to link and\nanalyze healthcare data.\nAbout the Linkage Seminar\nSeries\nAbout the Linkage Seminar Series: The Massive Data Institute at\nGeorgetown University’s McCourt School of Public Policy co-hosts monthly\nLinkage Seminars with the American Statistical Association’s Record\nLinkage Interest Group. These monthly seminars feature interdisciplinary\ndata experts discussing their work on data linkages across data types,\nsectors, domains, and disciplines.\n\n\n\n",
+    "preview": "posts/2022-03-25-linkage-seminar-series-friday-april-1st/portrait.jpg",
+    "last_modified": "2022-03-25T17:49:22-04:00",
+    "input_file": "linkage-seminar-series-friday-april-1st.knit.md"
+  },
+  {
     "path": "posts/2022-03-22-bls-statistical-seminar-on-monday-march-28th/",
     "title": "BLS Statistical Seminar on Monday, March 28th",
     "description": "Data Analysis after Record Linkage: sources of error, consequences, and possible solutions, Dr. Martin Slawski, Department of Statistics, Volgenau School of Engineering, George Mason University",
@@ -59,25 +78,6 @@
     "preview": "posts/2022-02-16-youre-invited-linkage-seminar-series-thursday-february-24/MDI.jpg",
     "last_modified": "2022-03-25T17:38:45-04:00",
     "input_file": "youre-invited-linkage-seminar-series-thursday-february-24.knit.md"
-  },
-  {
-    "path": "posts/2022-03-25-linkage-seminar-series-friday-april-1st/",
-    "title": "Linkage Seminar Series - Friday April 1st",
-    "description": "Roee Gutman will present work that view record linkage as a missing data problem and he will describe Bayesian procedures that utilize data features that are frequently encountered in public health applications.",
-    "author": [
-      {
-        "name": "RLIG",
-        "url": {}
-      }
-    ],
-    "date": "2022-02-16",
-    "categories": [
-      "Events"
-    ],
-    "contents": "\nYou are invited\n\n\n\nMDI and the ASA Record Linkage Interest Group’s Linkage Seminar\nSeries: \nBayesian Procedures for File Linking with Application to\nHealth Services Research \nFriday, April 1, 2022\n2 PM ET\n Register\nHere \nZoom Webinar\n\nRoee Gutman will present work that view record linkage as a missing\ndata problem and he will describe Bayesian procedures that utilize data\nfeatures that are frequently encountered in public health applications.\nThese procedures improve the linkage, and result in more accurate and\nprecise estimates of scientifically important associations. The first\nprocedure incorporates associations between variables exclusive to one\nof the datasets in the linkage process. The second procedure ensures\nthat individuals receiving care from the same provider in one file are\nlinked to individuals receiving care from a similar provider in the\nother file. Roee will demonstrate these procedures using two\napplications: one combines Medicare claims records and Vital Statistics\nMortality records to study the association between end-of-life medical\nexpenses and causes of death. A second application combines records from\nthe National Trauma Databank with Medicare claims data to study the\nrelationship between injury characteristics and successful discharge to\nthe community among patients with traumatic brain injury.\nThis seminar will be recorded and resources will be posted\nonline after the event.\nGuest Speaker: Roee\nGutman\n\n\nRoee Gutman\nRoee Gutman is an Associate Professor in the Department of\nBiostatistics at Brown University. His areas of expertise are causal\ninference, file linkage, missing data, Bayesian analysis and their\napplication to health services research. He has been the lead\nstatistician on multiple NIH and VA grants, and he has received two\nPCORI methods award. Roee has developed multiple procedures to link and\nanalyze healthcare data.\nAbout the Linkage Seminar\nSeries\nAbout the Linkage Seminar Series: The Massive Data Institute at\nGeorgetown University’s McCourt School of Public Policy co-hosts monthly\nLinkage Seminars with the American Statistical Association’s Record\nLinkage Interest Group. These monthly seminars feature interdisciplinary\ndata experts discussing their work on data linkages across data types,\nsectors, domains, and disciplines.\n\n\n\n",
-    "preview": "posts/2022-03-25-linkage-seminar-series-friday-april-1st/portrait.jpg",
-    "last_modified": "2022-03-25T17:44:59-04:00",
-    "input_file": "linkage-seminar-series-friday-april-1st.knit.md"
   },
   {
     "path": "posts/2021-12-23-record-linkage-at-the-gpsg-community-pantry/",
