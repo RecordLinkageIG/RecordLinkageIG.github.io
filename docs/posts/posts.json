@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/2022-03-29-record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions/",
-    "title": "📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions",
-    "description": "Thursday, April 7, 2022 -- In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.",
+    "title": "📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions - Thursday April 7",
+    "description": "In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.",
     "author": [
       {
         "name": "RLIG",
@@ -15,7 +15,7 @@
     ],
     "contents": "\nYou are invited\n\nRecord Linkage Methodology Under Fellegi-Sunter\nParadigm, with Extensions \nThursday, April 7, 2022\n12 PM PT\n Register\nHere \nZoom Webinar\n\nIn 1969, Ivan Fellegi and Alan Sunter formalized a strategy for\nconducting probabilistic record linkage that had been developed\npreviously. Included in this formalization was the demonstration that\nthe scoring method used with this is optimal under certain assumptions.\nWhile other record linkage methods have been developed (including\nBayesian-based ones) for large-scale linkages the Fellegi-Sunter\napproach should be a strong candidate\nIn this talk, Mr. Resnick will give an overview of the Fellegi-Sunter\napproach, explaining how candidate pair are evaluated under it. He will\nalso cover extensions and modifications to it, which include the\nfollowing:\nData editing and other preparation\nEstimation of scoring parameters using machine learning (E-M\nalgorithm)\nUse of name (and other comparison variable) frequencies\nUse of partial string agreements\nHierarchical (nested) comparisons\nUse of blocking and development of optimal blocking strategies\nEstimation of match probability and linkage error\nThis webinar is part of the Advanced\nMethods Webinar Series.\nSpeaker: Dean Resnick\nDean Resnick\nMr Resnick is a principal data scientist with NORC at the University\nof Chicago. He has been working on data analysis and statistical\nprogramming for at least several decades. Most of this work has focused\non using survey and administrative data for policy analysis, often in\nthe healthcare domain. For more than 10 years he worked at the U.S.\nCensus Bureau in the administrative record area. Here he became familiar\nwith record linkage, where it was being used to link very large surveys,\nenumerations, and administrative record files. During this period, he\ndeveloped a SAS based record-linkage module for high-volume linkages\nthat is still being used at the Bureau. At NORC, much of his work is\nfocused on record linkage and he has developed (in collaboration with\ncolleagues) a new SAS-based record linkage package that incorporates the\nE-M algorithm and several enhanced strategies for improving the quality\nof record linkage analyses.\n\n\n\n",
     "preview": "https://www.popdata.bc.ca/sites/default/files/inline-images/logos/PDBC_pantones_nowords.jpg",
-    "last_modified": "2022-03-29T15:08:08-04:00",
+    "last_modified": "2022-03-29T15:09:02-04:00",
     "input_file": "record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions.knit.md"
   },
   {

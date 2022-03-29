@@ -1,7 +1,7 @@
 ---
-title: "📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions"
+title: "📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions - Thursday April 7"
 description: |
-  Thursday, April 7, 2022 -- In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.
+  In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.
 preview: https://www.popdata.bc.ca/sites/default/files/inline-images/logos/PDBC_pantones_nowords.jpg
 author:
   - name: RLIG
