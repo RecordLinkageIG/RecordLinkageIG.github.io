@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2022-03-29-record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions/",
+    "title": "📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions",
+    "description": "Thursday, April 7, 2022 -- In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.",
+    "author": [
+      {
+        "name": "RLIG",
+        "url": {}
+      }
+    ],
+    "date": "2022-03-29",
+    "categories": [
+      "Events"
+    ],
+    "contents": "\nYou are invited\n\nRecord Linkage Methodology Under Fellegi-Sunter\nParadigm, with Extensions \nThursday, April 7, 2022\n12 PM PT\n Register\nHere \nZoom Webinar\n\nIn 1969, Ivan Fellegi and Alan Sunter formalized a strategy for\nconducting probabilistic record linkage that had been developed\npreviously. Included in this formalization was the demonstration that\nthe scoring method used with this is optimal under certain assumptions.\nWhile other record linkage methods have been developed (including\nBayesian-based ones) for large-scale linkages the Fellegi-Sunter\napproach should be a strong candidate\nIn this talk, Mr. Resnick will give an overview of the Fellegi-Sunter\napproach, explaining how candidate pair are evaluated under it. He will\nalso cover extensions and modifications to it, which include the\nfollowing:\nData editing and other preparation\nEstimation of scoring parameters using machine learning (E-M\nalgorithm)\nUse of name (and other comparison variable) frequencies\nUse of partial string agreements\nHierarchical (nested) comparisons\nUse of blocking and development of optimal blocking strategies\nEstimation of match probability and linkage error\nThis webinar is part of the Advanced\nMethods Webinar Series.\nSpeaker: Dean Resnick\nDean Resnick\nMr Resnick is a principal data scientist with NORC at the University\nof Chicago. He has been working on data analysis and statistical\nprogramming for at least several decades. Most of this work has focused\non using survey and administrative data for policy analysis, often in\nthe healthcare domain. For more than 10 years he worked at the U.S.\nCensus Bureau in the administrative record area. Here he became familiar\nwith record linkage, where it was being used to link very large surveys,\nenumerations, and administrative record files. During this period, he\ndeveloped a SAS based record-linkage module for high-volume linkages\nthat is still being used at the Bureau. At NORC, much of his work is\nfocused on record linkage and he has developed (in collaboration with\ncolleagues) a new SAS-based record linkage package that incorporates the\nE-M algorithm and several enhanced strategies for improving the quality\nof record linkage analyses.\n\n\n\n",
+    "preview": "https://www.popdata.bc.ca/sites/default/files/inline-images/logos/PDBC_pantones_nowords.jpg",
+    "last_modified": "2022-03-29T15:08:08-04:00",
+    "input_file": "record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions.knit.md"
+  },
+  {
     "path": "posts/2022-03-25-linkage-seminar-series-friday-april-1st/",
     "title": "📢 Linkage Seminar Series - Friday April 1st",
     "description": "Roee Gutman will present work that view record linkage as a missing data problem and he will describe Bayesian procedures that utilize data features that are frequently encountered in public health applications.",
@@ -16,25 +35,6 @@
     "contents": "\nYou are invited\n\n\n\nMDI and the ASA Record Linkage Interest Group’s Linkage Seminar\nSeries: \nBayesian Procedures for File Linking with Application to\nHealth Services Research \nFriday, April 1, 2022\n2 PM ET\n Register\nHere \nZoom Webinar\n\nRoee Gutman will present work that view record linkage as a missing\ndata problem and he will describe Bayesian procedures that utilize data\nfeatures that are frequently encountered in public health applications.\nThese procedures improve the linkage, and result in more accurate and\nprecise estimates of scientifically important associations. The first\nprocedure incorporates associations between variables exclusive to one\nof the datasets in the linkage process. The second procedure ensures\nthat individuals receiving care from the same provider in one file are\nlinked to individuals receiving care from a similar provider in the\nother file. Roee will demonstrate these procedures using two\napplications: one combines Medicare claims records and Vital Statistics\nMortality records to study the association between end-of-life medical\nexpenses and causes of death. A second application combines records from\nthe National Trauma Databank with Medicare claims data to study the\nrelationship between injury characteristics and successful discharge to\nthe community among patients with traumatic brain injury.\nThis seminar will be recorded and resources will be posted\nonline after the event.\nGuest Speaker: Roee\nGutman\n\n\nRoee Gutman\nRoee Gutman is an Associate Professor in the Department of\nBiostatistics at Brown University. His areas of expertise are causal\ninference, file linkage, missing data, Bayesian analysis and their\napplication to health services research. He has been the lead\nstatistician on multiple NIH and VA grants, and he has received two\nPCORI methods award. Roee has developed multiple procedures to link and\nanalyze healthcare data.\nAbout the Linkage Seminar\nSeries\nAbout the Linkage Seminar Series: The Massive Data Institute at\nGeorgetown University’s McCourt School of Public Policy co-hosts monthly\nLinkage Seminars with the American Statistical Association’s Record\nLinkage Interest Group. These monthly seminars feature interdisciplinary\ndata experts discussing their work on data linkages across data types,\nsectors, domains, and disciplines.\n\n\n\n",
     "preview": "posts/2022-03-25-linkage-seminar-series-friday-april-1st/portrait.jpg",
     "last_modified": "2022-03-29T15:05:32-04:00",
-    "input_file": {}
-  },
-  {
-    "path": "posts/2022-03-29-record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions/",
-    "title": "📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions",
-    "description": "Thursday, April 7, 2022 -- In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.",
-    "author": [
-      {
-        "name": "RLIG",
-        "url": {}
-      }
-    ],
-    "date": "2022-03-25",
-    "categories": [
-      "Events"
-    ],
-    "contents": "\nYou are invited\n\nRecord Linkage Methodology Under Fellegi-Sunter\nParadigm, with Extensions \nThursday, April 7, 2022\n12 PM PT\n Register\nHere \nZoom Webinar\n\nIn 1969, Ivan Fellegi and Alan Sunter formalized a strategy for\nconducting probabilistic record linkage that had been developed\npreviously. Included in this formalization was the demonstration that\nthe scoring method used with this is optimal under certain assumptions.\nWhile other record linkage methods have been developed (including\nBayesian-based ones) for large-scale linkages the Fellegi-Sunter\napproach should be a strong candidate\nIn this talk, Mr. Resnick will give an overview of the Fellegi-Sunter\napproach, explaining how candidate pair are evaluated under it. He will\nalso cover extensions and modifications to it, which include the\nfollowing:\nData editing and other preparation\nEstimation of scoring parameters using machine learning (E-M\nalgorithm)\nUse of name (and other comparison variable) frequencies\nUse of partial string agreements\nHierarchical (nested) comparisons\nUse of blocking and development of optimal blocking strategies\nEstimation of match probability and linkage error\nThis webinar is part of the Advanced\nMethods Webinar Series.\nSpeaker: Dean Resnick\nDean Resnick\nMr Resnick is a principal data scientist with NORC at the University\nof Chicago. He has been working on data analysis and statistical\nprogramming for at least several decades. Most of this work has focused\non using survey and administrative data for policy analysis, often in\nthe healthcare domain. For more than 10 years he worked at the U.S.\nCensus Bureau in the administrative record area. Here he became familiar\nwith record linkage, where it was being used to link very large surveys,\nenumerations, and administrative record files. During this period, he\ndeveloped a SAS based record-linkage module for high-volume linkages\nthat is still being used at the Bureau. At NORC, much of his work is\nfocused on record linkage and he has developed (in collaboration with\ncolleagues) a new SAS-based record linkage package that incorporates the\nE-M algorithm and several enhanced strategies for improving the quality\nof record linkage analyses.\n\n\n\n",
-    "preview": "https://www.popdata.bc.ca/sites/default/files/PDBC_KO%20all%20white%20no%20words.png",
-    "last_modified": "2022-03-29T15:01:56-04:00",
     "input_file": {}
   },
   {

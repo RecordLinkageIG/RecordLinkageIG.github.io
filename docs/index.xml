@@ -7,7 +7,17 @@
     <description>Blog of the Record Linkage Interest Group
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 25 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions</title>
+      <dc:creator>RLIG</dc:creator>
+      <link>https://recordlinkageig.github.io/posts/2022-03-29-record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions</link>
+      <description>Thursday, April 7, 2022 -- In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.</description>
+      <category>Events</category>
+      <guid>https://recordlinkageig.github.io/posts/2022-03-29-record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions</guid>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://www.popdata.bc.ca/sites/default/files/inline-images/logos/PDBC_pantones_nowords.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>📢 Linkage Seminar Series - Friday April 1st</title>
       <dc:creator>RLIG</dc:creator>
@@ -17,16 +27,6 @@
       <guid>https://recordlinkageig.github.io/posts/2022-03-25-linkage-seminar-series-friday-april-1st</guid>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       <media:content url="https://recordlinkageig.github.io/posts/2022-03-25-linkage-seminar-series-friday-april-1st/portrait.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions</title>
-      <dc:creator>RLIG</dc:creator>
-      <link>https://recordlinkageig.github.io/posts/2022-03-29-record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions</link>
-      <description>Thursday, April 7, 2022 -- In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.</description>
-      <category>Events</category>
-      <guid>https://recordlinkageig.github.io/posts/2022-03-29-record-linkage-methodology-under-fellegi-sunter-paradigm-with-extensions</guid>
-      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://www.popdata.bc.ca/sites/default/files/PDBC_KO%20all%20white%20no%20words.png" medium="image" type="image/png"/>
     </item>
     <item>
       <title>📢 BLS Statistical Seminar on Monday, March 28th</title>
