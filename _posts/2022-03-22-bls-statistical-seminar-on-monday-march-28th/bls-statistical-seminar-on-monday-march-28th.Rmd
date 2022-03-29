@@ -1,5 +1,5 @@
 ---
-title: "BLS Statistical Seminar on Monday, March 28th"
+title: "📢 BLS Statistical Seminar on Monday, March 28th"
 description: |
   Data Analysis after Record Linkage: sources of error, consequences, and possible solutions, Dr. Martin Slawski, Department of Statistics, Volgenau School of Engineering, George Mason University
 preview: https://img.vendingmarketwatch.com/files/base/cygnus/vmw/image/2020/09/16x9/US_Bureaw_Labor_Stats_WIKIPEDIA.5f57a9653b517.png

@@ -1,5 +1,5 @@
 ---
-title: "Linkage Seminar Series - Thursday February 24"
+title: "📢 Linkage Seminar Series - Thursday February 24"
 description: |
   For February’s Linkage Seminar, Amy O’Hara will be joined by Thais Menezes, a PhD student at SFI Centre for Research Training in Foundations of Data Science, University College Dublin. Thais’ work incorporates the household structure in recording linkage matching in the Ireland census database to make the process of matching individuals easier and more accurate.
 author:

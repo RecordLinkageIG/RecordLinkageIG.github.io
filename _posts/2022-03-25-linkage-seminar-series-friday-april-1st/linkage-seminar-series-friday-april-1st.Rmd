@@ -1,5 +1,5 @@
 ---
-title: "Linkage Seminar Series - Friday April 1st"
+title: "📢 Linkage Seminar Series - Friday April 1st"
 description: |
    Roee Gutman will present work that view record linkage as a missing data problem and he will describe Bayesian procedures that utilize data features that are frequently encountered in public health applications.
 author:
