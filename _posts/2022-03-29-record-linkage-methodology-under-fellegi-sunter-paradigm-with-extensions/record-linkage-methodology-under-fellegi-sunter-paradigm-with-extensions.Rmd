@@ -1,0 +1,68 @@
+---
+title: "📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions"
+description: |
+  Thursday, April 7, 2022 -- In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it.
+preview: https://www.popdata.bc.ca/sites/default/files/PDBC_KO%20all%20white%20no%20words.png
+author:
+  - name: RLIG
+date: 2022-03-25
+categories:
+  - Events
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## You are invited
+
+<center>
+
+<big>**Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions
+**</big>
+
+Thursday, April 7, 2022
+
+12 PM PT
+
+<big>
+[**Register Here**](https://www.popdata.bc.ca/events/etu/webinar/Adv_Meths_Apr07_2022)
+</big>
+
+Zoom Webinar
+
+</center>
+
+
+In 1969, Ivan Fellegi and Alan Sunter formalized a strategy for conducting probabilistic record linkage that had been developed previously. Included in this formalization was the demonstration that the scoring method used with this is optimal under certain assumptions. While other record linkage methods have been developed (including Bayesian-based ones) for large-scale linkages the Fellegi-Sunter approach should be a strong candidate
+
+In this talk, Mr. Resnick will give an overview of the Fellegi-Sunter approach, explaining how candidate pair are evaluated under it. He will also cover extensions and modifications to it, which include the following:
+
+- Data editing and other preparation
+- Estimation of scoring parameters using machine learning (E-M algorithm)
+- Use of name (and other comparison variable) frequencies
+- Use of partial string agreements
+- Hierarchical (nested) comparisons
+- Use of blocking and development of optimal blocking strategies
+- Estimation of match probability and linkage error
+
+This webinar is part of the [Advanced Methods Webinar Series](https://www.popdata.bc.ca/events/etu/webinar_series/Advanced_Methods).
+
+
+## Speaker: *Dean Resnick*
+
+### **Dean Resnick** 
+
+Mr Resnick is a principal data scientist with NORC at the University of Chicago. He has been working on data analysis and statistical programming for at least several decades. Most of this work has focused on using survey and administrative data for policy analysis, often in the healthcare domain. For more than 10 years he worked at the U.S. Census Bureau in the administrative record area. Here he became familiar with record linkage, where it was being used to link very large surveys, enumerations, and administrative record files. During this period, he developed a SAS based record-linkage module for high-volume linkages that is still being used at the Bureau. At NORC, much of his work is focused on record linkage and he has developed (in collaboration with colleagues) a new SAS-based record linkage package that incorporates the E-M algorithm and several enhanced strategies for improving the quality of record linkage analyses.
+
+
+
+
+
+
+
