@@ -7,7 +7,17 @@
     <description>Blog of the Record Linkage Interest Group
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 19 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>📢 Linkage Seminar Series - Thursday April 21</title>
+      <dc:creator>RLIG</dc:creator>
+      <link>https://recordlinkageig.github.io/posts/2022-04-19-linkage-seminar-series-thursday-april-21</link>
+      <description>David Beauchemin will discuss how duplicate detection can be used with AI and NLP techniques to extract information from external data sources using text distance metrics (e.g. Jaro) and classification algorithms. He will use a case study in insurance to demonstrate the proposed approach.</description>
+      <category>Events</category>
+      <guid>https://recordlinkageig.github.io/posts/2022-04-19-linkage-seminar-series-thursday-april-21</guid>
+      <pubDate>Tue, 19 Apr 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://recordlinkageig.github.io/posts/2022-04-19-linkage-seminar-series-thursday-april-21/unnamed.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>📢 Record Linkage Methodology Under Fellegi-Sunter Paradigm, with Extensions - Thursday April 7</title>
       <dc:creator>RLIG</dc:creator>
@@ -27,16 +37,6 @@
       <guid>https://recordlinkageig.github.io/posts/2022-03-25-linkage-seminar-series-friday-april-1st</guid>
       <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
       <media:content url="https://recordlinkageig.github.io/posts/2022-03-25-linkage-seminar-series-friday-april-1st/portrait.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>📢 Linkage Seminar Series - Thursday April 21</title>
-      <dc:creator>RLIG</dc:creator>
-      <link>https://recordlinkageig.github.io/posts/2022-04-19-linkage-seminar-series-thursday-april-21</link>
-      <description>David Beauchemin will discuss how duplicate detection can be used with AI and NLP techniques to extract information from external data sources using text distance metrics (e.g. Jaro) and classification algorithms. He will use a case study in insurance to demonstrate the proposed approach.</description>
-      <category>Events</category>
-      <guid>https://recordlinkageig.github.io/posts/2022-04-19-linkage-seminar-series-thursday-april-21</guid>
-      <pubDate>Fri, 25 Mar 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://recordlinkageig.github.io/posts/2022-04-19-linkage-seminar-series-thursday-april-21/unnamed.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>📢 BLS Statistical Seminar on Monday, March 28th</title>

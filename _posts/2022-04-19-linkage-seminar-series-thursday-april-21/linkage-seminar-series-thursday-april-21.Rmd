@@ -4,7 +4,7 @@ description: |
     David Beauchemin will discuss how duplicate detection can be used with AI and NLP techniques to extract information from external data sources using text distance metrics (e.g. Jaro) and classification algorithms. He will use a case study in insurance to demonstrate the proposed approach.
 author:
   - name: RLIG
-date: 2022-03-25
+date: 2022-04-19
 preview: unnamed.jpg
 categories:
   - Events
