@@ -1,0 +1,34 @@
+---
+title: "RLIG Breakfast at JSM on Thursday August 11!"
+description: |
+    Come join RLIG at the Joint Statistical Meetings (JSM) conference on Thursday, August 11, from 7:00 - 8:00 AM in room CC-210
+author:
+  - name: RLIG
+date: 2022-08-03
+preview: unnamed.jpg
+categories:
+  - Events
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+### Information about the social breakfast:
+
+**Meeting Title:** Record Linkage Interest Group
+
+**Date:** Thursday, 8/11/2022
+
+**Start Time:** 7:00 AM
+
+**End Time:** 8:00 AM
+
+**Meeting Room:** CC- 210
+
+**Room Set:** Rounds
