@@ -1,0 +1,33 @@
+---
+title: "JSM 2023: Call for Speakers for Record Linkage Session"
+description: |
+    We are looking for speakers!
+author:
+  - name: RLIG
+date: 2022-09-06
+preview: jsm2023.png
+categories:
+  - Events
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The Record Linkage Interest Group of the American Statistical Association would like to submit an Invited Session proposal for JSM 2023. The Government Statistics section will co-sponsor. 
+
+**We are looking for speakers!** 
+
+All we need for the application is a name and affiliation. The exact nature of your talk is not needed right now.  Are you thinking about attending JSM 2023 in Toronto and would you be interested in giving a talk on the theme of “Record Linkage in Government Statistics”?  Thursday is the due date for the proposal, so please respond ASAP if you are interested. 
+
+### Session Information
+
+**Title:** Record Linkage in Government Statistics
+
+**Keywords:** Data fusion; De-duplication; Entity resolution; Fellegi-Sunter theory; File matching
+
+**Abstract:** Record linkage (RL) is the process of identifying entries in two or more databases that refer to common individuals, businesses, or, more generally, entities. RL sometimes is referred to as data fusion, de-duplication, or entity resolution. In government applications, the databases used in RL can include censuses, surveys, and administrative data sources. RL can be used to remove duplicate entries, enhance information on entities by merging variables from multiple sources, augment survey frames and auxiliary variables, reduce respondent burden, and improve data quality. RL is used by many official statistical agencies around the world. RL is challenging when files are very large, information for linkage is limited, errors are present in some variables, a population structure is complex, and entities can have multiple varying representations over time. High quality record linkage requires expertise in statistics and computing and careful attention to details of variables and files. This session presents developments in government record linkage applications, methods, and theory. 
+
