@@ -7,16 +7,15 @@
     <description>Blog of the Record Linkage Interest Group
 </description>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 06 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Nov 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>JSM 2023: Call for Speakers for Record Linkage Session</title>
+      <title>Federated FHIR: Patient Identity &amp; Record Linkage</title>
       <dc:creator>RLIG</dc:creator>
       <link>https://recordlinkageig.github.io/posts/2022-09-06-call-for-speakers</link>
-      <description>We are looking for speakers!</description>
+      <description>Online seminar: Learn how to master data deduplication in your system and manage health records consistently.</description>
       <category>Events</category>
       <guid>https://recordlinkageig.github.io/posts/2022-09-06-call-for-speakers</guid>
-      <pubDate>Tue, 06 Sep 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://recordlinkageig.github.io/posts/2022-09-06-call-for-speakers/jsm2023.png" medium="image" type="image/png" width="400" height="251"/>
+      <pubDate>Tue, 29 Nov 2022 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>RLIG Breakfast at JSM on Thursday August 11!</title>

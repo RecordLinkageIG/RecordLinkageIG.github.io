@@ -1,11 +1,10 @@
 ---
-title: "JSM 2023: Call for Speakers for Record Linkage Session"
+title: "Federated FHIR: Patient Identity & Record Linkage"
 description: |
-    We are looking for speakers!
+    Online seminar: Learn how to master data deduplication in your system and manage health records consistently.
 author:
   - name: RLIG
-date: 2022-09-06
-preview: jsm2023.png
+date: 2022-11-29
 categories:
   - Events
 output:
@@ -17,17 +16,11 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-The Record Linkage Interest Group of the American Statistical Association would like to submit an Invited Session proposal for JSM 2023. The Government Statistics section will co-sponsor. 
+"How to manage longitudinal and consistent patient records, avoid duplicates and improve data quality? Link or merge patient data? What is federated FHIR?
 
-**We are looking for speakers!** 
+You'll hear from experts like Grahame Grieve, Dean Resnick, Thomas Myers and Christopher Oakman who are making data federation work better in real life – and the lessons they've learned."
 
-All we need for the application is a name and affiliation. The exact nature of your talk is not needed right now.  Are you thinking about attending JSM 2023 in Toronto and would you be interested in giving a talk on the theme of “Record Linkage in Government Statistics”?  Thursday is the due date for the proposal, so please respond to **mlarsen at smcvt.edu** ASAP if you are interested. 
+### Sign up
 
-### Session Information
-
-**Title:** Record Linkage in Government Statistics
-
-**Keywords:** Data fusion; De-duplication; Entity resolution; Fellegi-Sunter theory; File matching
-
-**Abstract:** Record linkage (RL) is the process of identifying entries in two or more databases that refer to common individuals, businesses, or, more generally, entities. RL sometimes is referred to as data fusion, de-duplication, or entity resolution. In government applications, the databases used in RL can include censuses, surveys, and administrative data sources. RL can be used to remove duplicate entries, enhance information on entities by merging variables from multiple sources, augment survey frames and auxiliary variables, reduce respondent burden, and improve data quality. RL is used by many official statistical agencies around the world. RL is challenging when files are very large, information for linkage is limited, errors are present in some variables, a population structure is complex, and entities can have multiple varying representations over time. High quality record linkage requires expertise in statistics and computing and careful attention to details of variables and files. This session presents developments in government record linkage applications, methods, and theory. 
+**Learn more and sign up here: https://www.healthdevhub.com/meetups/meetup-9#meetup-reg-form**
 

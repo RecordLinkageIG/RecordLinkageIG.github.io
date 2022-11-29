@@ -1,24 +1,22 @@
 [
   {
     "path": "posts/2022-09-06-call-for-speakers/",
-    "title": "JSM 2023: Call for Speakers for Record Linkage Session",
-    "description": "We are looking for speakers!",
+    "title": "Federated FHIR: Patient Identity & Record Linkage",
+    "description": "Online seminar: Learn how to master data deduplication in your system and manage health records consistently.",
     "author": [
       {
         "name": "RLIG",
         "url": {}
       }
     ],
-    "date": "2022-09-06",
+    "date": "2022-11-29",
     "categories": [
       "Events"
     ],
-    "contents": "\nThe Record Linkage Interest Group of the American Statistical\nAssociation would like to submit an Invited Session proposal for JSM\n2023. The Government Statistics section will co-sponsor.\nWe are looking for speakers!\nAll we need for the application is a name and affiliation. The exact\nnature of your talk is not needed right now. Are you thinking about\nattending JSM 2023 in Toronto and would you be interested in giving a\ntalk on the theme of “Record Linkage in Government Statistics”? Thursday\nis the due date for the proposal, so please respond to mlarsen\nat smcvt.edu ASAP if you are interested.\nSession Information\nTitle: Record Linkage in Government Statistics\nKeywords: Data fusion; De-duplication; Entity\nresolution; Fellegi-Sunter theory; File matching\nAbstract: Record linkage (RL) is the process of\nidentifying entries in two or more databases that refer to common\nindividuals, businesses, or, more generally, entities. RL sometimes is\nreferred to as data fusion, de-duplication, or entity resolution. In\ngovernment applications, the databases used in RL can include censuses,\nsurveys, and administrative data sources. RL can be used to remove\nduplicate entries, enhance information on entities by merging variables\nfrom multiple sources, augment survey frames and auxiliary variables,\nreduce respondent burden, and improve data quality. RL is used by many\nofficial statistical agencies around the world. RL is challenging when\nfiles are very large, information for linkage is limited, errors are\npresent in some variables, a population structure is complex, and\nentities can have multiple varying representations over time. High\nquality record linkage requires expertise in statistics and computing\nand careful attention to details of variables and files. This session\npresents developments in government record linkage applications,\nmethods, and theory.\n\n\n\n",
-    "preview": "posts/2022-09-06-call-for-speakers/jsm2023.png",
-    "last_modified": "2022-09-06T20:35:47-04:00",
-    "input_file": {},
-    "preview_width": 400,
-    "preview_height": 251
+    "contents": "\n“How to manage longitudinal and consistent patient records, avoid\nduplicates and improve data quality? Link or merge patient data? What is\nfederated FHIR?\nYou’ll hear from experts like Grahame Grieve, Dean Resnick, Thomas\nMyers and Christopher Oakman who are making data federation work better\nin real life – and the lessons they’ve learned.”\nSign up\nLearn more and sign up here: https://www.healthdevhub.com/meetups/meetup-9#meetup-reg-form\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-11-29T10:57:13-05:00",
+    "input_file": {}
   },
   {
     "path": "posts/2022-08-03-rlig-breakfast-at-jsm/",
